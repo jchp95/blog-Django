@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if articles %}
+    <div class="grid-container-details">
+        {% for article in articles %}
+            <div class="article-card-details">
+                <h3 class="article-title-details">{{ article.title }}</h3>
+                <p class="article-content">{{ article.content }}
+                    <a href="{% url 'articles_details' article.id %}"></a>
+                </p>
+                <small class="article-date">{{ article.created_at }}</small>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No hay artículos disponibles.</p>
+    {% endif %}
+
+    {% include 'slide.html' %}
+{% endblock %}

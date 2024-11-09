@@ -1,0 +1,47 @@
+"""blog URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from mi_app.views import home, about, services, contact, articles_details, news_details, submit_comment, register, CustomLoginView, login, like_comment, dislike_comment, submit_reply, terms_and_conditions_view, search, chatbot_view
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home, name='home'),
+    path('articles/<int:id>/', articles_details, name='articles_details'),
+    path('news/<int:id>/', news_details, name='news_details'),
+    path('about/', about, name='about'),
+    path('services/', services, name='services'),
+    path('contact/', contact, name='contact'),
+    path('submit_comment/', submit_comment, name='submit_comment'),
+    path('accounts/register/', register, name='register'),
+    path('login/', login, name='login'),
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
+    path('terms-and-conditions/', terms_and_conditions_view, name='terms_and_conditions'),
+    path('like_comment/<int:comment_id>/', like_comment, name='like_comment'),
+    path('dislike_comment/<int:comment_id>/', dislike_comment, name='dislike_comment'),
+    path('submit_reply/', submit_reply, name='submit_reply'),
+    path('search/', search, name='search'),
+    
+    path('chatbot/', chatbot_view, name='chatbot'),
+]
+if settings.DEBUG:
+   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

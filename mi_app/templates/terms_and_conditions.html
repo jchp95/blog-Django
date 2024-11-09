@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+<div class="container-terms-header">
+    <div class="terms-header">
+        <div class="terms-title">{{ terms.title }}</div>
+        <p class="terms-last-updated">Última actualización: {{ terms.last_updated }}</p>
+    </div>
+</div>
+
+<div class="container-conditions">
+    <main>
+        <section>
+            <h2>1. Acceptance:</h2>
+            <p>{{ terms.acceptance }}</p>
+        </section>
+
+        <section>
+            <h2>2. Content usage:</h2>
+            <p>{{ terms.content_usage }}</p>
+        </section>
+
+        <section>
+            <h2>3. Intellectual property:</h2>
+            <p>{{ terms.intellectual_property }}</p>
+        </section>
+
+        <section>
+            <h2>4. Third party links:</h2>
+            <p>{{ terms.third_party_links }}</p>
+        </section>
+
+        <section>
+            <h2>5. Modifications:</h2>
+            <p>{{ terms.modifications }}</p>
+        </section>
+
+        <section>
+            <h2>6. Contact:</h2>
+            <p>{{ terms.contact }}</p>
+        </section>
+    </main>
+</div>
+
+<!-- New Section for SLIDE -->
+{% include 'slide.html' %}
+{% endblock %}

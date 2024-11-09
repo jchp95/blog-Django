@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1 class="title-results">Search results for: "{{ query }}"</h1>
+
+{% if results %}
+    <div class="search-results">
+        {% for result in results %}
+            <div class="result-item">
+                <h3>{{ result.title }}</h3>  <!-- Título del artículo -->
+                <p>{{ result.content }}</p>  <!-- Contenido del artículo -->
+                <small>Creado el: {{ result.created_at|date:"d M Y" }}</small>  <!-- Fecha de creación -->
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+
+<!-- New Section for SLIDE -->
+{% include 'slide.html' %}
+{% endblock %}

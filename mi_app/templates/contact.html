@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{%load static%}
+{% block content %}
+
+<div class="contact-container">
+    {% for contact in contact %}
+        <div class="contact-card">
+            <h3>{{ forloop.counter }}. {{ contact.title }}</h3>
+            <p>{{ contact.description }}</p>
+        </div>
+    {% endfor %}
+
+    <!-- Imagen añadida aquí -->
+    <div class="contact-image">
+        <div class="title-ubication">
+        <h3 class="title-h3">3. Ubication</h3>
+        <img src="{% static 'img/carousel4.jpg' %}" alt="Descripción de la imagen" class="img-ubicacion">
+    </div>
+    </div>
+
+    <div class="contact-method">
+        <h2>💬 Contact Form</h2>
+        <p>If you prefer, you can also fill out our contact form below. Tell us what it is about and we will respond soon:</p>
+        
+        <!-- Container for the success message -->
+        <div id="success-message" style="display: none; color: green;">
+            {{success_message}}
+        </div>
+        
+        <form id="myForm" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- This renders the form automatically -->
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>        
+
+<!-- New Section for SLIDE -->
+{% include 'slide.html' %}
+
+{% endblock %}
