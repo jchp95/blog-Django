@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 
 <!-- navbar.html -->
@@ -6,6 +7,9 @@
         <a href="{% url 'home' %}">
             <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo">
         </a>
+            <!-- Cambio de idioma -->
+    <a href="{% url 'switch_language' %}?lang=en">English|</a>
+    <a href="{% url 'switch_language' %}?lang=es">Español</a>
     </div>
     <nav class="navbar">
         <ul class="navbar-list">

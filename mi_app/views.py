@@ -6,17 +6,50 @@ from django.contrib import messages
 import logging
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
+from django.urls import reverse
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.http import JsonResponse
 from django.db.models import Q 
 from django.contrib.auth.decorators import login_required
+from django.utils import translation
 
+from django.conf import settings  # Importa settings para acceder a LANGUAGE_SESSION_KEY
+from django.utils.translation import gettext as _
+
+########## Cambio de idioma##################
+# Define LANGUAGE_SESSION_KEY manualmente
+LANGUAGE_SESSION_KEY = 'django_language'
+
+# Define LANGUAGE_SESSION_KEY si no está disponible
+def switch_language(request):
+    lang_code = request.GET.get('lang', 'en')
+    translation.activate(lang_code)
+    request.session[LANGUAGE_SESSION_KEY] = lang_code  # Usa la constante directamente
+    
+    # Ahora obtén el idioma actual después de activarlo
+    current_language = translation.get_language()
+    
+    print("Session content:", request.session)
+    print(f"Language switched to: {lang_code}")  # Para depuración
+    print("Current language:", current_language)  # Esto ahora mostrará el idioma correcto
+    print(f"Current language in home view: {current_language}")
+
+    return redirect(request.META.get('HTTP_REFERER', '/'))
 
 # Configura el logger
 logger = logging.getLogger(__name__)
 
+def index(request):
+    current_language = translation.get_language()  # Obtén el idioma actual
+    return render(request, 'index.html', {
+        'LANGUAGE_CODE': current_language,  # Asegúrate de pasar el idioma actual
+        'request': request,  # Asegúrate de pasar el objeto de solicitud si lo necesitas
+    })
+
 
 def home(request):
+    current_language = translation.get_language()
     articles = Article.objects.all()
     news = News.objects.all()
     images = Image.objects.all()
@@ -31,6 +64,7 @@ def home(request):
         'comments': comments,  # Pass comments to the template
         'images': images,
         'show_cookie_banner': show_cookie_banner,  # Pasar la variable al contexto
+        'LANGUAGE_CODE': current_language,
     })
 
 def login(request):
@@ -110,10 +144,6 @@ def register(request):
     
     return render(request, 'registration/register.html', {'form': form})
 
-
-
-def index(request):
-    return render(request, 'index.html')
 
 def articles_details(request, id):
     articles = Article.objects.all()  # Obtiene todos los artículos
@@ -216,35 +246,3 @@ def search(request):
 
 #################################chat IA###########################################
 
-# chatbot/views.py
-from django.shortcuts import render
-from .forms import ChatForm
-import requests
-
-def chatbot_view(request):
-    answer = ''
-    if request.method == 'POST':
-        form = ChatForm(request.POST)
-        if form.is_valid():
-            question = form.cleaned_data['question']
-            answer = fetch_wikipedia_summary(question)
-    else:
-        form = ChatForm()
-
-    return render(request, 'chat.html', {'form': form, 'answer': answer})
-
-def fetch_wikipedia_summary(question):
-    url = "https://es.wikipedia.org/w/api.php"
-    params = {
-        'action': 'query',
-        'format': 'json',
-        'list': 'search',
-        'srsearch': question,
-        'utf8': 1,
-        'srlimit': 1,
-    }
-    response = requests.get(url, params=params)
-    data = response.json()
-    if data['query']['search']:
-        return data['query']['search'][0]['snippet']
-    return "No encontré nada sobre eso."

@@ -10,6 +10,7 @@
                     <a href="{% url 'articles_details' article.id %}"></a>
                 </p>
                 <small class="article-date">{{ article.created_at }}</small>
+                <div class="fb-like" data-href="http://127.0.0.1:8000/" data-width="20px" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
             </div>
         {% endfor %}
     </div>

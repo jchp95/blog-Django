@@ -1,1 +1,482 @@
-.fondo {    background-image: url('/static/img/fondo.jpg'); /* Asegúrate de tener la imagen en la carpeta static */    background-size: cover;}/* ESTILOS DE LA NAVBAR */.general-navbar{    display: flex;    justify-content: space-between;}.navbar-logo {    display: flex;    align-items: center; /* Alinea verticalmente el logo */    margin-left: 10px; /* Espacio entre el logo y la lista */}.logo {    height: 80px; /* Ajusta la altura del logo según sea necesario */    width: auto; /* Mantiene la proporción de la imagen */    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Sombra para imágenes SVG */    transition: transform 0.3s; /* Transición suave para el efecto hover */}.logo:hover{    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */}.navbar {    background-color: #2d374800; /* bg-gray-800 */    padding: 16px; /* p-4 */    align-items: center;        display: flex;}.navbar-list {    display: flex; /* flex */    justify-content: flex-end; /* justify-end */    list-style-type: none; /* Eliminar viñetas */    margin: 0; /* Resetear margen */    padding: 0; /* Resetear padding */    gap: 16px; /* space-x-4 */}.navbar-link {    font-weight: 100;    color: rgb(0, 0, 0); /* text-white */    padding: 8px 12px; /* px-3 py-2 */    border-radius: 4px; /* rounded */    text-decoration: none; /* Eliminar subrayado */    transition: background-color 0.3s; /* Transición para hover */}.navbar-link:hover {    background-color: #d7dce4; /* hover:bg-gray-700 */}/* ESTILOS DE LA BARRA DE BUSQUEDA */.search-item {    flex-grow: 1; /* Permite que el elemento de búsqueda crezca */    display: flex; /* Flex para alinear el formulario */    justify-content: center; /* Centrar horizontalmente */    align-items: center;}.search-container {    display: flex;    justify-content: center;    align-items: center;    transition: box-shadow 0.3s ease; /* Transición suave para la sombra */}.search {    position: relative; /* Posiciona el contenedor relativo para el ícono */    width: 400px; /* Ajusta el ancho de la barra de búsqueda */}.search-input {    padding: 12px 40px; /* Aumenta el padding para un tamaño más grande */    border: 5px solid #c1cbdb; /* border border-gray-300 */    border-radius: 50px; /* rounded */    outline: none; /* focus:outline-none */    transition: border-color 0.3s; /* Transición para el enfoque */    width: 100%; /* Asegura que el input ocupe todo el ancho del contenedor */}.search-input:focus {    border-color: #3b82f6; /* focus:ring-blue-500 */}.search-button {    position: absolute; /* Posiciona el botón de búsqueda */    top: 50%; /* Centra verticalmente */    left: 10px; /* Ajusta el espacio desde la izquierda */    transform: translateY(-50%); /* Ajusta para centrarlo */    background: none; /* Sin fondo */    border: none; /* Sin borde */    cursor: pointer; /* Cambia el cursor al pasar el ratón */    font-size: 20px; /* Aumenta el tamaño del ícono */}/* ESTILOS DEL FOOTER */.footer {    background: linear-gradient(270deg, #623fef, #feb47b, #a28cfc); /* Gradiente de color */    background-size: 400% 400%; /* Tamaño del fondo para la animación */    animation: gradientAnimation 15s ease infinite; /* Animación del gradiente */    padding : 20px 0; /* Espaciado vertical */    text-align: center; /* Centra el texto */}@keyframes gradientAnimation {    0% {        background-position: 0% 50%; /* Inicio de la animación */    }    50% {        background-position: 100% 50%; /* Mitad de la animación */    }    100% {        background-position: 0% 50%; /* Fin de la animación */    }}.footer-container {    display: flex; /* Flexbox para alinear elementos */    justify-content: space-around; /* Espacio entre los elementos */    align-items: center; /* Centra verticalmente los elementos */}.social-links {    display: flex; /* Flexbox para los iconos */    gap: 15px; /* Espacio entre los iconos */}.social-icon img {    width: 30px; /* Ancho de los iconos */    height: auto; /* Mantiene la proporción */}.footer-links {    display: flex; /* Flexbox para los enlaces */    gap: 15px; /* Espacio entre los enlaces */}.footer-link {    text-decoration: none; /* Sin subrayado */    color: #ffffff; /* Color del texto */}.footer-link:hover {    text-decoration: none; /* Subrayado al pasar el ratón */    color: black;}.footer-text {    margin-top: 10px; /* Espacio encima del texto de derechos de autor */    color: #00000092; /* Color del texto */}/* Estilos de los iconos redes sociales */.social-icon {    font-size: 24px; /* Tamaño del icono */    color: #ffffff; /* Color del icono */    margin: 0 10px; /* Espaciado entre iconos */    text-decoration: none; /* Sin subrayado */}.social-icon:hover {    color: #000000; /* Color al pasar el mouse */}/* Estilos de los card pagina home */.container-pro {    width: 100%;    display: flex; /* Utiliza flexbox para alinear los contenedores */        align-items: flex-start; /* Alinea los contenedores en la parte superior */}.container {    width: 100%;    display: flex; /* Utiliza flexbox para alinear los contenedores */        align-items: flex-start; /* Alinea los contenedores en la parte superior */}.news-title{    font-size: 20px;    font-weight: bold;}.news-container{    width: 50%;    margin: 20px;}.container-title {    display: flex;    justify-content: space-between;    align-items: center;    width: 100%;    padding: 20px;    text-align: center; /* Centra el título */    font-size: 40px;    font-weight: 500;}.articles-container {    width: 100%;    margin-left: 20px;}.article-card {    background-color: #ffffffcd; /* Fondo blanco para las tarjetas */    border-radius: 8px; /* Bordes redondeados */    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */    margin-bottom: 20px; /* Espacio entre tarjetas */    padding: 20px; /* Espacio interno */    transition: transform 0.2s; /* Efecto de hover */}.article-card:hover {    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */}.article-title {    font-family: 'Montserrat', sans-serif; /* Fuente moderna */    font-size: 24px; /* Tamaño de fuente para el título */    font-weight: 600; /* Peso de fuente */    margin: 0 0 10px; /* Margen inferior */}.article-content {    font-family: 'Montserrat', sans-serif; /* Fuente moderna */    font-size: 16px; /* Tamaño de fuente para el contenido */    color: #555; /* Color de texto */    margin: 0 0 10px; /* Margen inferior */    text-align: justify; /* Justifica el texto */}.article-date {    font-family: 'Montserrat', sans-serif; /* Fuente moderna */    font-size: 14px; /* Tamaño de fuente para la fecha */    color: #999; /* Color de texto para la fecha */}.title {    font-weight: 500;}.title, .title-news {    font-size: 30px; /* Tamaño de fuente para los títulos */    font-weight: 500; /* Negrita para los títulos */}.title a, .title-news a {    text-decoration: none; /* Sin subrayado en los enlaces */    color: #000000; /* Color del texto */    margin: 100px;}.title a:hover, .title-news a:hover {    color: #007bff; /* Color al pasar el mouse */}.container-title-news {    display: flex;    justify-content: end;    margin: 0;    align-items: center;}.grid-container {    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta el tamaño de las cards */    gap: 20px; /* Espacio entre las cards */    justify-content: space-between;}.news-card {    margin-bottom: 20px;    width: 100%; /* Asegura que las cards de noticias ocupen todo el ancho del contenedor */    background: #f9f9f9; /* Color de fondo de las cards */    border: 1px solid #ddd; /* Borde de las cards */    border-radius: 8px; /* Bordes redondeados */    padding: 15px; /* Espaciado interno */    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */    margin-bottom: 20px;    transition: transform 0.2s;}.news-card:hover {    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */}.news-image {    width: 100%; /* Ajusta la imagen al ancho de la card */    height: auto; /* Mantiene la proporción de la imagen */    border-radius: 4px; /* Bordes redondeados para la imagen */    margin: 10px 0; /* Espacio alrededor de la imagen */}.like-button{    cursor: pointer;}.dislike-button{    cursor: pointer;}.container-slide-section{    background-color: #9d77f776;    display: flex;    justify-content: center;    overflow: hidden; /* Para ocultar las tarjetas que están fuera de vista */}.slide-section {    padding: 20px;    margin: auto;    justify-content: flex-start;    display: flex;    width: 920px;}.slide-container {    display: flex;    justify-content: flex-start;    overflow: hidden; /* Para ocultar las tarjetas que están fuera de vista */}.card-wrapper {    display: flex;    transition: transform 0.5s ease; /* Transición suave para el autoslide */}.card-slide {    border: 1px solid #ddd;    border-radius: 5px;    margin: 10px;    width: 200px; /* Ajusta el ancho según sea necesario */    overflow: hidden;    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);}.card-image-slide {    width: 100%;    max-height: 150px; /* Altura máxima */    object-fit: cover; /* Mantiene la relación de aspecto */}.card-content-slide {    padding: 10px;}.card-title-slide {    font-size: 1.2em;    margin: 0;}.card-description-slide {    font-size: 0.9em;    color: #666;}.comments-section-button{        border-radius: 50px !important;    color: #6B7280 !important;    background-color: rgba(255, 255, 255, 0) !important;    }.view-replies-button{    border-radius: 50px !important;    color: #6B7280 !important;    background-color: rgba(255, 255, 255, 0) !important;}    .cookie-banner {        position: fixed;        bottom: -100px; /* Comienza fuera de la vista */        left: 0;        right: 0;        background-color: #33333377; /* Color de fondo */        color: rgb(37, 37, 37); /* Color del texto */        padding: 20px; /* Espaciado interno */        text-align: center; /* Centrar el texto */        transition: bottom 0.5s ease; /* Transición suave */        z-index: 1000; /* Asegurarse de que esté en la parte superior */    }    .cookie-banner.show {        bottom: 0; /* Posición visible */    }    .cookie-banner button {        margin: 0 10px; /* Espaciado entre botones */        padding: 10px 20px; /* Espaciado interno de botones */        background-color: #ffffff9d; /* Color de fondo de botones */        border: none; /* Sin borde */        color: rgb(37, 37, 37); /* Color del texto */        cursor: pointer; /* Cambiar cursor a puntero */        border-radius: 50px; /* Bordes redondeados */    }    .cookie-banner button:hover {        background-color: #e1b12c; /* Color de fondo al pasar el ratón */    }
+.fondo {
+    background-image: url('/static/img/fondo.jpg');
+    /* Asegúrate de tener la imagen en la carpeta static */
+    background-size: cover;
+}
+
+/* ESTILOS DE LA NAVBAR */
+.general-navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente el logo */
+    margin-left: 10px;
+    /* Espacio entre el logo y la lista */
+}
+
+.logo {
+    height: 80px;
+    /* Ajusta la altura del logo según sea necesario */
+    width: auto;
+    /* Mantiene la proporción de la imagen */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    /* Sombra para imágenes SVG */
+    transition: transform 0.3s;
+    /* Transición suave para el efecto hover */
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el mouse */
+}
+
+.navbar {
+    background-color: #2d374800;
+    /* bg-gray-800 */
+    padding: 16px;
+    /* p-4 */
+    align-items: center;
+    display: flex;
+}
+
+.navbar-list {
+    display: flex;
+    /* flex */
+    justify-content: flex-end;
+    /* justify-end */
+    list-style-type: none;
+    /* Eliminar viñetas */
+    margin: 0;
+    /* Resetear margen */
+    padding: 0;
+    /* Resetear padding */
+    gap: 16px;
+    /* space-x-4 */
+}
+
+.navbar-link {
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    /* text-white */
+    padding: 8px 12px;
+    /* px-3 py-2 */
+    border-radius: 4px;
+    /* rounded */
+    text-decoration: none;
+    /* Eliminar subrayado */
+    transition: background-color 0.3s;
+    /* Transición para hover */
+}
+
+.navbar-link:hover {
+    background-color: #d7dce4;
+    /* hover:bg-gray-700 */
+}
+
+/* ESTILOS DE LA BARRA DE BUSQUEDA */
+.search-item {
+    flex-grow: 1;
+    /* Permite que el elemento de búsqueda crezca */
+    display: flex;
+    /* Flex para alinear el formulario */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+    /* Transición suave para la sombra */
+}
+
+.search {
+    position: relative;
+    /* Posiciona el contenedor relativo para el ícono */
+    width: 400px;
+    /* Ajusta el ancho de la barra de búsqueda */
+}
+
+.search-input {
+    padding: 12px 40px;
+    /* Aumenta el padding para un tamaño más grande */
+    border: 5px solid #c1cbdb;
+    /* border border-gray-300 */
+    border-radius: 50px;
+    /* rounded */
+    outline: none;
+    /* focus:outline-none */
+    transition: border-color 0.3s;
+    /* Transición para el enfoque */
+    width: 100%;
+    /* Asegura que el input ocupe todo el ancho del contenedor */
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+    /* focus:ring-blue-500 */
+}
+
+.search-button {
+    position: absolute;
+    /* Posiciona el botón de búsqueda */
+    top: 50%;
+    /* Centra verticalmente */
+    left: 10px;
+    /* Ajusta el espacio desde la izquierda */
+    transform: translateY(-50%);
+    /* Ajusta para centrarlo */
+    background: none;
+    /* Sin fondo */
+    border: none;
+    /* Sin borde */
+    cursor: pointer;
+    /* Cambia el cursor al pasar el ratón */
+    font-size: 20px;
+    /* Aumenta el tamaño del ícono */
+}
+
+/* ESTILOS DEL FOOTER */
+.footer {
+    background: linear-gradient(270deg, #623fef, #feb47b, #a28cfc);
+    /* Gradiente de color */
+    background-size: 400% 400%;
+    /* Tamaño del fondo para la animación */
+    animation: gradientAnimation 15s ease infinite;
+    /* Animación del gradiente */
+    padding: 20px 0;
+    /* Espaciado vertical */
+    text-align: center;
+    /* Centra el texto */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* Inicio de la animación */
+    }
+
+    50% {
+        background-position: 100% 50%;
+        /* Mitad de la animación */
+    }
+
+    100% {
+        background-position: 0% 50%;
+        /* Fin de la animación */
+    }
+}
+
+.footer-container {
+    display: flex;
+    /* Flexbox para alinear elementos */
+    justify-content: space-around;
+    /* Espacio entre los elementos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+}
+
+.social-links {
+    display: flex;
+    /* Flexbox para los iconos */
+    gap: 15px;
+    /* Espacio entre los iconos */
+}
+
+.social-icon img {
+    width: 30px;
+    /* Ancho de los iconos */
+    height: auto;
+    /* Mantiene la proporción */
+}
+
+.footer-links {
+    display: flex;
+    /* Flexbox para los enlaces */
+    gap: 15px;
+    /* Espacio entre los enlaces */
+}
+
+.footer-link {
+    text-decoration: none;
+    /* Sin subrayado */
+    color: #ffffff;
+    /* Color del texto */
+}
+
+.footer-link:hover {
+    text-decoration: none;
+    /* Subrayado al pasar el ratón */
+    color: black;
+}
+
+.footer-text {
+    margin-top: 10px;
+    /* Espacio encima del texto de derechos de autor */
+    color: #00000092;
+    /* Color del texto */
+}
+
+/* Estilos de los iconos redes sociales */
+.social-icon {
+    font-size: 24px;
+    /* Tamaño del icono */
+    color: #ffffff;
+    /* Color del icono */
+    margin: 0 10px;
+    /* Espaciado entre iconos */
+    text-decoration: none;
+    /* Sin subrayado */
+}
+
+.social-icon:hover {
+    color: #000000;
+    /* Color al pasar el mouse */
+}
+
+/* Estilos de los card pagina home */
+.container-pro {
+    width: 100%;
+    display: flex;
+    /* Utiliza flexbox para alinear los contenedores */
+    align-items: flex-start;
+    /* Alinea los contenedores en la parte superior */
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    /* Utiliza flexbox para alinear los contenedores */
+    align-items: flex-start;
+    /* Alinea los contenedores en la parte superior */
+}
+
+.news-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.news-container {
+    width: 50%;
+    margin: 20px;
+}
+
+.container-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    /* Centra el título */
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.articles-container {
+    width: 100%;
+    margin-left: 20px;
+}
+
+.article-card {
+    background-color: #ffffffcd;
+    /* Fondo blanco para las tarjetas */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    margin-bottom: 20px;
+    /* Espacio entre tarjetas */
+    padding: 20px;
+    /* Espacio interno */
+    transition: transform 0.2s;
+    /* Efecto de hover */
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    /* Efecto de elevación al pasar el mouse */
+}
+
+.article-title {
+    font-family: 'Montserrat', sans-serif;
+    /* Fuente moderna */
+    font-size: 24px;
+    /* Tamaño de fuente para el título */
+    font-weight: 600;
+    /* Peso de fuente */
+    margin: 0 0 10px;
+    /* Margen inferior */
+}
+
+.article-content {
+    font-family: 'Montserrat', sans-serif;
+    /* Fuente moderna */
+    font-size: 16px;
+    /* Tamaño de fuente para el contenido */
+    color: #555;
+    /* Color de texto */
+    margin: 0 0 10px;
+    /* Margen inferior */
+    text-align: justify;
+    /* Justifica el texto */
+}
+
+.article-date {
+    font-family: 'Montserrat', sans-serif;
+    /* Fuente moderna */
+    font-size: 14px;
+    /* Tamaño de fuente para la fecha */
+    color: #999;
+    /* Color de texto para la fecha */
+}
+
+.title {
+    font-weight: 500;
+}
+
+.title,
+.title-news {
+    font-size: 30px;
+    /* Tamaño de fuente para los títulos */
+    font-weight: 500;
+    /* Negrita para los títulos */
+}
+
+.title a,
+.title-news a {
+    text-decoration: none;
+    /* Sin subrayado en los enlaces */
+    color: #000000;
+    /* Color del texto */
+    margin: 100px;
+}
+
+.title a:hover,
+.title-news a:hover {
+    color: #007bff;
+    /* Color al pasar el mouse */
+}
+
+.container-title-news {
+    display: flex;
+    justify-content: end;
+    margin: 0;
+    align-items: center;
+}
+
+.grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Ajusta el tamaño de las cards */
+    gap: 20px;
+    /* Espacio entre las cards */
+    justify-content: space-between;
+}
+
+.news-card {
+    margin-bottom: 20px;
+    width: 100%;
+    /* Asegura que las cards de noticias ocupen todo el ancho del contenedor */
+    background: #f9f9f9;
+    /* Color de fondo de las cards */
+    border: 1px solid #ddd;
+    /* Borde de las cards */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 15px;
+    /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra */
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    /* Efecto de elevación al pasar el mouse */
+}
+
+.news-image {
+    width: 100%;
+    /* Ajusta la imagen al ancho de la card */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    border-radius: 4px;
+    /* Bordes redondeados para la imagen */
+    margin: 10px 0;
+    /* Espacio alrededor de la imagen */
+}
+
+.like-button {
+    cursor: pointer;
+}
+
+.dislike-button {
+    cursor: pointer;
+}
+
+.comments-section-button {
+    border-radius: 50px !important;
+    color: #6B7280 !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.view-replies-button {
+    border-radius: 50px !important;
+    color: #6B7280 !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: -100px;
+    /* Comienza fuera de la vista */
+    left: 0;
+    right: 0;
+    background-color: #333333d2;
+    /* Color de fondo */
+    color: rgba(255, 255, 255, 0.79);
+    /* Color del texto */
+    padding: 20px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centrar el texto */
+    transition: bottom 0.5s ease;
+    /* Transición suave */
+    z-index: 1000;
+    /* Asegurarse de que esté en la parte superior */
+}
+
+.cookie-banner.show {
+    bottom: 0;
+    /* Posición visible */
+}
+
+.cookie-banner button {
+    margin: 0 20px;
+    /* Espaciado entre botones */
+    padding: 10px 20px;
+    /* Espaciado interno de botones */
+    background-color: #ffffff9d;
+    /* Color de fondo de botones */
+    border: none;
+    /* Sin borde */
+    color: rgb(37, 37, 37);
+    /* Color del texto */
+    cursor: pointer;
+    /* Cambiar cursor a puntero */
+    border-radius: 50px;
+    /* Bordes redondeados */
+}
+
+.cookie-banner button:hover {
+    background-color: #e1b12c;
+    /* Color de fondo al pasar el ratón */
+}
+

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mi_app.views import home, about, services, contact, articles_details, news_details, submit_comment, register, CustomLoginView, login, like_comment, dislike_comment, submit_reply, terms_and_conditions_view, search, chatbot_view
+from mi_app.views import home, about, services, contact, articles_details, news_details, submit_comment, register, CustomLoginView, login, like_comment, dislike_comment, submit_reply, terms_and_conditions_view, search, switch_language
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -40,8 +40,8 @@ urlpatterns = [
     path('dislike_comment/<int:comment_id>/', dislike_comment, name='dislike_comment'),
     path('submit_reply/', submit_reply, name='submit_reply'),
     path('search/', search, name='search'),
-    
-    path('chatbot/', chatbot_view, name='chatbot'),
+    path('switch_language/', switch_language, name='switch_language'),
 ]
+    
 if settings.DEBUG:
    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

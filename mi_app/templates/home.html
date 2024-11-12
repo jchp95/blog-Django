@@ -3,6 +3,8 @@
 {% block content %}
 
 <div class="container-title">
+ 
+    
     <div class="title">
         <a>Recent Articles</a>
     </div> 
@@ -10,6 +12,7 @@
         <a>Recent News</a>
     </div> 
 </div>
+
 
 <div class="container"></div>
 <div class="container-pro">
@@ -20,7 +23,7 @@
                     <div class="article-card">
                         <h3 class="article-title">{{ article.title }}</h3>
                         <p class="article-content">{{ article.content|truncatewords:50 }}
-                            <a href="{% url 'articles_details' article.id %}">leer más</a>
+                            <a href="{% url 'articles_details' article.id %}">Learn more</a>
                         </p>
                         <small class="article-date">{{ article.created_at }}</small>
                     </div>
@@ -39,7 +42,7 @@
                         <img src="{{ news.image.url }}" alt="" class="news-image"> <!-- Imagen -->
                     {% endif %}
                     <p class="news-content">{{ news.content|truncatewords:30 }}
-                        <a href="{% url 'news_details' news.id %}">leer más</a>
+                        <a href="{% url 'news_details' news.id %}">learn more</a>
                     </p>
                     <small class="news-date">{{ news.created_at }}</small>
                 </div>

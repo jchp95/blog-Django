@@ -22,6 +22,3 @@ class ContactMessageForm(forms.ModelForm):
         fields = ['name', 'email', 'message']
 
 
-
-class ChatForm(forms.Form):
-    question = forms.CharField(label='Pregunta', max_length=255)

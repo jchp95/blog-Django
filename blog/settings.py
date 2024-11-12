@@ -12,9 +12,31 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # O el que estés usando
+
+LANGUAGE_CODE = 'en-us'  # Idioma predeterminado
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+# Idiomas disponibles
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+    # Agrega otros idiomas según sea necesario
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',  # Asegúrate de que esta ruta sea correcta
+]
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,6 +69,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

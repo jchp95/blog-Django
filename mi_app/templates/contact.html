@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-{%load static%}
+{% load static %}
 {% block content %}
 
 <div class="contact-container">
@@ -13,9 +13,9 @@
     <!-- Imagen añadida aquí -->
     <div class="contact-image">
         <div class="title-ubication">
-        <h3 class="title-h3">3. Ubication</h3>
-        <img src="{% static 'img/carousel4.jpg' %}" alt="Descripción de la imagen" class="img-ubicacion">
-    </div>
+            <h3 class="title-h3">3. Ubication</h3>
+            <img src="{% static 'img/carousel4.jpg' %}" alt="Descripción de la imagen" class="img-ubicacion">
+        </div>
     </div>
 
     <div class="contact-method">
@@ -24,7 +24,7 @@
         
         <!-- Container for the success message -->
         <div id="success-message" style="display: none; color: green;">
-            {{success_message}}
+            {{ success_message }}
         </div>
         
         <form id="myForm" method="POST">
