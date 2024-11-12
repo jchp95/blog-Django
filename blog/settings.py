@@ -33,7 +33,7 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',  # Asegúrate de que esta ruta sea correcta
+    os.path.join(BASE_DIR, 'locale'),  # Asegúrate de que esta ruta sea correcta
 ]
 
 
@@ -156,12 +156,15 @@ USE_TZ = True
 LOGIN_REDIRECT_URL = 'home'  # O la URL que desees
 LOGOUT_REDIRECT_URL = 'home'  # O la URL que desees
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "mi_app/static"),
 ]
+
+# Configuración de archivos multimedia
+MEDIA_URL = '/media/'  # URL base para acceder a los archivos multimedia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Ruta en el sistema de archivos donde se almacenan los archivos multimedia
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
