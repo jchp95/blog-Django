@@ -22,7 +22,6 @@ packaging==24.1
 pillow==11.0.0
 python-decouple==3.8
 pytz==2024.2
-pywin32==308
 PyYAML==6.0.2
 requests==2.27.1
 setuptools==75.3.0
