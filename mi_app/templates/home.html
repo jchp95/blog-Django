@@ -1,7 +1,6 @@
 {% extends 'index.html' %}
 
 {% block content %}
-
 <!-- Nuevo contenedor para la imagen del banner cargada desde el administrador -->
 <div class="banner-image-container">
     {% if banner_home %}
@@ -13,20 +12,9 @@
     {% endif %}
 </div>
 
-
-<div class="container-title">
-    <div class="title">
-        <a>Recent Articles</a>
-    </div> 
-    <div class="title-news">
-        <a>Recent News</a>
-    </div> 
-</div>
-
-
-<div class="container"></div>
 <div class="container-pro">
     <div class="articles-container">
+        <a class="title">Recent Articles</a>
         {% if articles %}
             <div class="grid-container">
                 {% for article in articles %}
@@ -44,24 +32,28 @@
         {% endif %}
     </div>
     <div class="news-container"> 
+        <a class="title-news">Recent News</a>
         {% if news %}
-            {% for news in news %}
-                <div class="news-card">
-                    <h3 class="news-title">{{ news.title }}</h3>
-                    {% if news.image %}
-                        <img src="{{ news.image.url }}" alt="" class="news-image"> <!-- Imagen -->
-                    {% endif %}
-                    <p class="news-content">{{ news.content|truncatewords:30 }}
-                        <a href="{% url 'news_details' news.id %}">learn more</a>
-                    </p>
-                    <small class="news-date">{{ news.created_at }}</small>
-                </div>
-            {% endfor %}
+            <div class="grid-container">
+                {% for news in news %}
+                    <div class="news-card">
+                        <h3 class="news-title">{{ news.title }}</h3>
+                        {% if news.image %}
+                            <img src="{{ news.image.url }}" alt="" class="news-image"> <!-- Imagen -->
+                        {% endif %}
+                        <p class="news-content">{{ news.content|truncatewords:30 }}
+                            <a href="{% url 'news_details' news.id %}">learn more</a>
+                        </p>
+                        <small class="news-date">{{ news.created_at }}</small>
+                    </div>
+                {% endfor %}
+            </div>
         {% else %}
             <p>No hay noticias disponibles.</p>
         {% endif %}
     </div>
-</div>    
+</div>
+
 
 <!-- New Section for SLIDE -->
 {% include 'slide.html' %}

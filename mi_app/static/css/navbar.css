@@ -82,7 +82,7 @@
         display: -webkit-box; /* Muestra el menú cuando está activo */
         max-height: 400px; /* Altura máxima cuando está activo */
         opacity: 1; /* Totalmente visible */
-        margin-right: 80px;
+        margin-right: 40px;
         border-radius: 8px;
     }
 
