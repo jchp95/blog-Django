@@ -1,0 +1,131 @@
+
+
+/* Tarjeta de registro */
+.container-card-register {
+    display: flex;
+    width: 100%; /* Ancho completo */
+    overflow: hidden; /* Evita que los elementos se desborden */
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen a la izquierda */
+.img-left {
+    width: 41%; /* Ancho de la imagen ajustado al 50% */
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+    border-radius: 8px 0 0 8px; /* Bordes redondeados solo en la parte izquierda */
+}
+
+.register-image{
+    border-radius: 8px 0 0 8px;
+}
+
+.card-register{
+    display: flex;
+    width: 40%;
+    border-radius: 0 8px 8px 0;
+}
+
+.card{
+    display: flex;
+    width: 100%;
+    background-color: #007bff20;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 30px; /* Espaciado interno más amplio */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Ancho del formulario ajustado al 50% */
+    
+}
+
+/* Títulos */
+.card-title {
+    font-size: 24px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita para destacar */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilos de los campos del formulario */
+.form-group {
+    width: 100%; /* Asegura que el grupo del formulario ocupe el ancho completo */
+    margin-bottom: 20px; /* Espaciado inferior para separar los campos */
+    
+}
+
+.form-group label {
+    margin-bottom: 5px; /* Espaciado inferior para separar la etiqueta del campo */
+    font-weight: 500; /* Peso de fuente más ligero para las etiquetas */
+    
+}
+
+.form-control {
+    width: 100%; /* Asegura que el campo ocupe el ancho completo */
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #ced4da00; /* Borde suave */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para el borde */
+    font-size: 14px; /* Tamaño de la fuente */
+    padding: 10px; /* Espaciado interno para que el texto no esté pegado al borde */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+    background-color: #007bff33;
+}
+
+.form-control::placeholder {
+    font-size: 12px; /* Tamaño más pequeño para el placeholder */
+    color: #a0a0a0; /* Color del placeholder (opcional) */
+    
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Color del borde al enfocar (puedes cambiarlo si quieres) */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+    background-color: #007bff24;
+}
+
+/* Botón de registro */
+.btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    width: 100%; /* Botón ocupa el ancho completo */
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: .25em;
+    background-color: #007bff6d;
+    border: none;
+}
+
+/* Etiqueta del checkbox */
+.form-check-label {
+    margin-left: 5px; /* Espaciado a la izquierda del texto del checkbox */
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container-card-register {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        width: 90%; /* Ancho completo en pantallas pequeñas */
+    }
+
+    .img-left {
+        width: 100%; /* Imagen ocupa el ancho completo en pantallas pequeñas */
+        border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    }
+}
