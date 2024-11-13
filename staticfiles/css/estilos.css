@@ -26,6 +26,7 @@
     display: block; /* Asegura que no haya espacios debajo de la imagen */
 }
 
+/*####################################################################################*/
 
 /* ESTILOS DE LA BARRA DE BUSQUEDA */
 .search-item {
@@ -94,6 +95,111 @@
     /* Aumenta el tamaño del ícono */
 }
 
+/*##################################################################################*/
+
+.container-pro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles-container, .news-container {
+    padding: 10px;
+    margin-bottom: 20px; /* Espacio entre secciones */
+}
+
+.title, .title-news {
+    display: flex;
+    font-size: 2em; /* Tamaño de fuente grande */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-align: center; /* Centrar el texto */
+
+}
+
+
+.title:hover, .title-news:hover {
+   color: #aabc21;
+}
+
+.article-card, .news-card {
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s; /* Transición suave para el efecto hover */
+    margin-bottom: 20px;
+}
+
+.article-card:hover, .news-card:hover {
+    transform: translateY(-5px); /* Levantar la tarjeta al pasar el ratón */
+}
+
+.article-title, .news-title {
+    font-size: 1.5em; /* Tamaño de fuente para el título del artículo/noticia */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.article-content, .news-content {
+    margin-bottom: 10px; /* Espacio debajo del contenido */
+}
+
+.article-date, .news-date {
+    font-size: 0.9em; /* Tamaño de fuente más pequeño para la fecha */
+    color: #666; /* Color gris para la fecha */
+}
+
+.news-image {
+    max-width: 100%; /* Asegura que la imagen no exced a el ancho de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+@media (max-width: 600px) {
+    .container-pro {
+        display: contents;
+        padding: 5px; /* Reducir el espaciado interno en móviles */
+    }
+
+    .articles-container, .news-container {
+        width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+        margin: 0;
+    }
+
+    .title, .title-news {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em; /* Tamaño de fuente más pequeño en móviles */
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 15px; /* Espacio debajo del título */
+    }
+
+    .grid-container {
+        display: grid; /* Usar cuadrícula para disposición */
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        gap: 10px; /* Espacio entre tarjetas */
+    }
+
+    .article-card, .news-card {
+        width: 100%; /* Asegurar que las tarjetas ocupen todo el ancho */
+        padding: 15px; /* Espaciado interno en las tarjetas */
+        box-sizing: border-box; /* Incluir padding en el ancho total */
+    }
+
+    .article-title, .news-title {
+        font-size: 1.2em; /* Tamaño de fuente para el título más pequeño en móviles */
+    }
+
+    .article-content, .news-content {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño para el contenido */
+    }
+
+    .article-date, .news-date {
+        font-size: 0.8em; /* Tamaño de fuente más pequeño para la fecha */
+    }
+}
+
+/*###############################################################################################*/
 
 /* ESTILOS DEL FOOTER */
 .footer {
@@ -191,182 +297,6 @@
 .social-icon:hover {
     color: #000000;
     /* Color al pasar el mouse */
-}
-
-/* Estilos de los card pagina home */
-.container-pro {
-    width: 100%;
-    display: flex;
-    /* Utiliza flexbox para alinear los contenedores */
-
-    align-items: flex-start;
-    /* Alinea los contenedores en la parte superior */
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    /* Utiliza flexbox para alinear los contenedores */
-
-    align-items: flex-start;
-    /* Alinea los contenedores en la parte superior */
-}
-
-.news-title {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.news-container {
-    width: 50%;
-    margin: 20px;
-}
-
-.container-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    /* Centra el título */
-    font-size: 40px;
-    font-weight: 500;
-}
-
-.articles-container {
-    width: 100%;
-    margin-left: 20px;
-}
-
-.article-card {
-    background-color: #ffffffcd;
-    /* Fondo blanco para las tarjetas */
-    border-radius: 8px;
-    /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-    margin-bottom: 20px;
-    /* Espacio entre tarjetas */
-    padding: 20px;
-    /* Espacio interno */
-    transition: transform 0.2s;
-    /* Efecto de hover */
-}
-
-.article-card:hover {
-    transform: translateY(-5px);
-    /* Efecto de elevación al pasar el mouse */
-}
-
-.article-title {
-    font-family: 'Montserrat', sans-serif;
-    /* Fuente moderna */
-    font-size: 24px;
-    /* Tamaño de fuente para el título */
-    font-weight: 600;
-    /* Peso de fuente */
-    margin: 0 0 10px;
-    /* Margen inferior */
-}
-
-.article-content {
-    font-family: 'Montserrat', sans-serif;
-    /* Fuente moderna */
-    font-size: 16px;
-    /* Tamaño de fuente para el contenido */
-    color: #555;
-    /* Color de texto */
-    margin: 0 0 10px;
-    /* Margen inferior */
-    text-align: justify;
-    /* Justifica el texto */
-}
-
-.article-date {
-    font-family: 'Montserrat', sans-serif;
-    /* Fuente moderna */
-    font-size: 14px;
-    /* Tamaño de fuente para la fecha */
-    color: #999;
-    /* Color de texto para la fecha */
-}
-
-.title {
-    font-weight: 500;
-}
-
-.title,
-.title-news {
-    font-size: 30px;
-    /* Tamaño de fuente para los títulos */
-    font-weight: 500;
-    /* Negrita para los títulos */
-}
-
-.title a,
-.title-news a {
-    text-decoration: none;
-    /* Sin subrayado en los enlaces */
-    color: #000000;
-    /* Color del texto */
-    margin: 100px;
-}
-
-.title a:hover,
-.title-news a:hover {
-    color: #007bff;
-    /* Color al pasar el mouse */
-}
-
-.container-title-news {
-    display: flex;
-    justify-content: end;
-    margin: 0;
-    align-items: center;
-}
-
-.grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    /* Ajusta el tamaño de las cards */
-    gap: 20px;
-    /* Espacio entre las cards */
-    justify-content: space-between;
-}
-
-
-.news-card {
-    margin-bottom: 20px;
-    width: 100%;
-    /* Asegura que las cards de noticias ocupen todo el ancho del contenedor */
-    background: #f9f9f9;
-    /* Color de fondo de las cards */
-    border: 1px solid #ddd;
-    /* Borde de las cards */
-    border-radius: 8px;
-    /* Bordes redondeados */
-    padding: 15px;
-    /* Espaciado interno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Sombra */
-    margin-bottom: 20px;
-    transition: transform 0.2s;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    /* Efecto de elevación al pasar el mouse */
-}
-
-.news-image {
-    width: 100%;
-    /* Ajusta la imagen al ancho de la card */
-    height: auto;
-    /* Mantiene la proporción de la imagen */
-    border-radius: 4px;
-    /* Bordes redondeados para la imagen */
-    margin: 10px 0;
-    /* Espacio alrededor de la imagen */
 }
 
 .like-button {
