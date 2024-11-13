@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact
+from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome
 from .models import ContactMessage
+
+
+
 
 admin.site.register(TermsAndConditions)
 
@@ -13,6 +16,9 @@ class ArticleAdmin(admin.ModelAdmin):
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at')  # Asegúrate de usar atributos válidos
 
+@admin.register(BannerHome)
+class BannerHomeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'created_at')
 
 
 admin.site.register(News, NewsAdmin)

@@ -3,10 +3,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 # Asegúrate de que el modelo de usuario esté bien definido
 User  = get_user_model()
-
 
 class CustomUser_CreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -14,6 +14,13 @@ class CustomUser_CreationForm(UserCreationForm):
 class Meta:
     model = User
     fields = ('username', 'email', 'password1', 'password2')
+
+class BannerHome(models.Model):
+    image = models.ImageField(upload_to='banners/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Banner Home {self.id}"
 
 class Article(models.Model):  
     title = models.CharField(max_length=200)  

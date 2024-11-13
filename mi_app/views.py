@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact
+from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome
 from .forms import TermsAndConditionsForm, ServicesForm, ContactForm, ContactMessageForm
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
@@ -50,6 +50,7 @@ def index(request):
 
 def home(request):
     current_language = translation.get_language()
+    banner_home = BannerHome.objects.first()
     articles = Article.objects.all()
     news = News.objects.all()
     images = Image.objects.all()
@@ -59,12 +60,14 @@ def home(request):
     show_cookie_banner = request.COOKIES.get('cookie_consent') is None
     
     return render(request, 'home.html', {
+        
         'articles': articles,
         'news': news,
         'comments': comments,  # Pass comments to the template
         'images': images,
         'show_cookie_banner': show_cookie_banner,  # Pasar la variable al contexto
         'LANGUAGE_CODE': current_language,
+        'banner_home': banner_home,
     })
 
 def login(request):

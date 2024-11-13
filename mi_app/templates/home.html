@@ -2,9 +2,19 @@
 
 {% block content %}
 
+<!-- Nuevo contenedor para la imagen del banner cargada desde el administrador -->
+<div class="banner-image-container">
+    {% if banner_home %}
+        <div class="banner-gradient">
+            <img src="{{ banner_home.image.url }}" alt="Banner Principal" class="banner-home-image">
+        </div>
+    {% else %}
+        <p>No hay imagen disponible.</p>
+    {% endif %}
+</div>
+
+
 <div class="container-title">
- 
-    
     <div class="title">
         <a>Recent Articles</a>
     </div> 

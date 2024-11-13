@@ -1,5 +1,5 @@
 from django import forms
-from .models import TermsAndConditions, Services, Contact, ContactMessage# Asegúrate de que este modelo exista
+from .models import TermsAndConditions, Services, Contact, ContactMessage
 
 class TermsAndConditionsForm(forms.ModelForm):
     class Meta:

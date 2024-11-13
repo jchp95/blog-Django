@@ -1,17 +1,16 @@
-{% load i18n %}
 {% load static %}
-
-<!-- navbar.html -->
 <div class="general-navbar">
     <div class="navbar-logo">
         <a href="{% url 'home' %}">
             <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo">
         </a>
-            <!-- Cambio de idioma -->
-    <a href="{% url 'switch_language' %}?lang=en">English|</a>
-    <a href="{% url 'switch_language' %}?lang=es">Español</a>
     </div>
     <nav class="navbar">
+        <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul class="navbar-list">
             <li><a href="{% url 'home' %}" class="navbar-link">Home</a></li>
             <li><a href="{% url 'about' %}" class="navbar-link">About</a></li>
@@ -21,12 +20,13 @@
     </nav>
 </div>
 
-<div class="search-container">
+<!--<div class="search-container">
     <form action="{% url 'search' %}" method="get" class="search-form">
         <div class="search">
             <input type="text" placeholder="Search..." name="search" required class="search-input">
             <button type="submit" class="search-button">🔍</button>
         </div>
     </form>
-  <!--   <div class="search-results"></div> Contenedor para mostrar resultados -->
-</div>
+</div>-->
+
+
