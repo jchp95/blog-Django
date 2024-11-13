@@ -1,0 +1,54 @@
+/* Estilos generales */
+
+.container-terms-header {
+    display: flex;
+    margin: 20px; /* Centrar el contenedor */
+    justify-content: center;
+}
+
+/* Estilo del título */
+.terms-title {
+    font-weight: 500;
+    font-size: 40px; /* Tamaño de fuente grande */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del título */
+}
+
+/* Estilo de la última actualización */
+.terms-last-updated {
+    text-align: center; /* Centrar el texto */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    color: #0000009d; /* Color gris para el texto secundario */
+}
+
+.container-conditions{
+    margin: 20px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.469);
+    
+}
+
+/* Estilo para las secciones */
+section {
+    margin-bottom: 20px; /* Espacio entre secciones */
+    padding: 15px; /* Espaciado interno */
+    border-left: 4px solid #007bff; /* Línea de color a la izquierda */
+    background-color: #f1f1f1; /* Fondo gris claro */
+}
+
+/* Estilo de los encabezados de sección */
+h2 {
+    font-size: 1.5em; /* Tamaño de fuente para encabezados */
+    margin-bottom: 10px; /* Espacio debajo del encabezado */
+    color: #333; /* Color oscuro */
+    font-weight: 500;
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espacio arriba del pie */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    color: #666; /* Color gris */
+}
