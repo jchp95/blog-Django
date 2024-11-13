@@ -1,0 +1,107 @@
+.general-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #ffffff;
+}
+
+.navbar-logo .logo {
+    height: 100px; /* Altura del logo */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Sombra para imágenes SVG */
+    transition: transform 0.3s; /* Transición suave para el efecto hover */
+}
+
+.navbar-logo .logo:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el mouse */
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.7)); /* Aumenta la sombra al pasar el mouse */
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-link {
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 700;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.navbar-link:hover {
+    color: #aabc21;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 20px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .navbar-list {
+        display: -webkit-box; /* Inicialmente oculto */
+        flex-direction: column; /* Coloca los enlaces en columna */
+        position: absolute; /* Posición absoluta para superponerse */
+        top: 0; /* Distancia desde la parte superior */
+        right: 0;/* Alineado al borde derecho */
+        z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+        padding: 10px 0; /* Espaciado vertical */
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones */
+        max-height: 400px; /* Aumentado para asegurar que el contenido se muestre */
+        opacity: 0; /* Inicialmente invisible */
+        background-color: #333;
+        
+    }
+
+    .navbar-logo .logo {
+        height: 50px; /* Altura del logo */
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Sombra para imágenes SVG */
+        transition: transform 0.3s; /* Transición suave para el efecto hover */
+    }
+
+    .navbar-list.active {
+        display: -webkit-box; /* Muestra el menú cuando está activo */
+        max-height: 400px; /* Altura máxima cuando está activo */
+        opacity: 1; /* Totalmente visible */
+        margin-right: 80px;
+        border-radius: 8px;
+    }
+
+    .navbar-toggle {
+        display: flex; /* Muestra el botón de hamburguesa */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        z-index: 1001; /* Asegúrate de que esté por encima del menú */
+    }
+
+    .navbar-link {
+        padding: 10px; /* Espaciado de los enlaces */
+        color: #ffffff; /* Cambiado a blanco para mejor contraste */
+        text-decoration: none; /* Sin subrayado */
+        transition: background-color 0.3s; /* Transición para el hover */
+        border-radius: 4px; /* Bordes redondeados en los enlaces */
+        margin: 5px; /* Margen entre los enlaces */
+    }
+
+    .navbar-link:hover {
+        color: #aabc21;
+    }
+}
