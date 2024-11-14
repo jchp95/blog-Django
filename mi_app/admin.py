@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome
+from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome, About
 from .models import ContactMessage
 
 
@@ -49,3 +49,5 @@ admin.site.register(ContactMessage)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')  # Campos que se mostrarán en la lista
     fields = ('title', 'description')  # Permite buscar por nombre
+
+admin.site.register(About)

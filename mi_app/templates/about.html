@@ -2,99 +2,76 @@
 {% load static %}
 {% block content %}
 
-<!-- Carousel Section -->
-<div class="carousel-container">
-    <div id="carouselExample" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{% static 'img/carousel1.jpg' %}" class="d-block w-100" alt="Slide 1">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/carousel2.jpg' %}" class="d-block w-100" alt="Slide 2">
-            </div>
-            <div class="carousel-item">
-                <img src="{% static 'img/carousel3.jpg' %}" class="d-block w-100" alt="Slide 3">
-            </div>
-        </div>
-        <!-- Controles del Carrusel -->
-        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+<section class="about-intro">
+    <div class="about-content-container">
+        <h2>Who are we?</h2>
+        <p>{{ team_description }}</p>
     </div>
-    <h1>Hello! Welcome to EL BLOG 🎉</h1>
-</div>
+    <div class="about-image-container">
+        {% if team_image %}
+            <img src="{{ team_image }}" alt="Team Image" class="about-image">
+        {% endif %}
+    </div>
+</section>
 
-
-<div class="about-content-container">
-    <h2>Who are we?</h2>
-    <p>We are a diverse team of writers and enthusiasts who see the world as a vast ocean of interesting topics. We love researching, discussing, and writing about a variety of topics, and we're excited to share our perspectives with you!</p>
-</div>
-
-<div class="about-page">
+<section class="about-page">
     <div class="about-left">
-        <div class="image-card">
-            <img src="{% static 'img/about.jpg' %}" alt="About Us" class="about-image"> <!-- Change the image path as necessary -->
-        </div>
+        <!--<div class="image-card">
+            <img src="{% static 'img/about.jpg' %}" alt="About Us" class="about-image">
+        </div>-->
     </div>
     <div class="about-right">
         <div class="content-container">
-            <h2>What can you find here?</h2>
-            <ul>
-                <li>Current articles: A look at what's happening in the world, from politics to technology.</li>
-                <li>Curiosities and entertainment: Curious facts, lists and fun articles that are sure to make you smile.</li>
-                <li>Reflections and opinions: Thoughts on topics that matter to us and how they affect us in our daily lives.</li>
-                <li>Helpful Tips: From lifestyle to wellness, we want to help you live to the fullest.</li>
-                <li>Cultural Trends: An analysis of the latest trends in art, music and lifestyle that are shaping our society.</li>
-                <li>Health and wellness: Articles on how to maintain a healthy lifestyle, including nutrition, exercise and mental health tips.</li>
+            <h2 class="h-text">What can you find here?</h2>
+            <ul class="about-right">
+                {% for item in what_you_can_find %}
+                    <li class="li-about">{{ item }}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>
-</div>
+</section>
 
-<div class="general-content-container-3">
-    <div class="about-content-container-3">
-        <h2 class="about-1">Why do we do it?</h2>
-        <p class="about">We believe that knowledge is power and that sharing it is essential. Our goal is to create a space where everyone feels welcome to explore and learn. Plus, we love connecting with people like you!</p>
+<section class="about-details">
+    <div class="about-content-section">
+        <h2 class="h-text">Why do we do it?</h2>
+        <p>{{ why_we_do_it }}</p>
     </div>
 
-    <div class="about-content-container-3">
-        <h2 class="about-1">Our Core Values</h2>
-        <ul class="about-ul">
-            <li><p class="about">Integrity</p></li>
-            <li><p class="about">Innovation</p></li>
-            <li><p class="about">Commitment to Customer</p></li>
+    <div class="about-content-section">
+        <h2 class="h-text">Our Core Values</h2>
+        <ul>
+            {% for value in core_values %}
+                <li class="l-about">{{ value }}</li>
+            {% endfor %}
         </ul>
     </div>
-        <div class="about-content-container-3">
-            <h2 class="about-1">Get to know us better</h2>
-            <p class="about">You can contact us through:
-                <ul class="about-ul">
-                    <li><a href="mailto:julio.hdez.blog@gmail.com">julio.hdez.blog@gmail.com</a></li>
-                    <li><a href="https://www.facebook.com/juliocesar.hernandezpedraza?mibextid=kFxxJD" target="_blank">Facebook</a></li>
-                    <li><a href="https://wa.me/message/C7YPFDRBOQ3QL1" target="_blank">Whatsapp</a></li>
-                </ul> 
-                <p class="about">We'd love to hear from you!</p>
-            </p>
-        </div>
-    </div>
 
-    <div class="about-content-container-4">
-        <p class="about-2">So, get ready to browse our collection of articles and news! Don't hesitate to leave us your comments or suggestions, we would love to hear from you!</p>
-        <p class="about-2">Thank you for visiting us and being part of our community. Let's enjoy this trip together!</p>
-        <p class="about-2">✌️ and Blog - Where every topic counts.</p>
+    <div class="about-content-section">
+        <h2 class="h-text">Get to know us better</h2>
+        <p class="p-text">You can contact us through:</p>
+        <ul class="u-link">
+            <li class="l-link"><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></li>
+            <li class="l-link"><a href="{{ facebook_url }}" target="_blank">Facebook</a></li>
+            <li class="l-link"><a href="{{ whatsapp_url }}" target="_blank">Whatsapp</a></li>
+        </ul>
+        <p class="p-text">We'd love to hear from you!</p>
     </div>
+</section>
 
-        
+<footer class="about-content-footer">
+    <p class="p-footer">So, get ready to browse our collection of articles and news! Don't hesitate to leave us your comments or suggestions, we would love to hear from you!</p>
+    <p class="p-footer">{{ footer_message }}</p>
+    <div class="container-about-logos">
+        <a href="{% url 'home' %}" class="a-logo">
+            <img src="{% static 'logos/logo2.png' %}" alt="Logo" class="logo-about">
+        </a>
+        <a href="{% url 'home' %}" class="a-logo">
+            <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo-about">
+        </a>
     </div>
-</div>
+</footer>
 
-<!-- New Section for SLIDE -->
 {% include 'slide.html' %}
-
 
 {% endblock %}

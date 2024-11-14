@@ -1,3 +1,5 @@
+{% load static %}
+
 <!-- footer.html -->
 <footer class="footer">
     <div class="footer-container">
@@ -16,11 +18,11 @@
             </a>
         </div>
         <div class="footer-links">
-          <ul>      
-           <li> <a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms and Conditions</a></li>
-           <li></li> <a href="{% url 'about' %}" class="footer-link">About Us</a></li>
-           <li></li> <a href="{% url 'services' %}" class="footer-link">Services</a></li>
-           <li></li> <a href="{% url 'contact' %}" class="footer-link">Contact Us</a></li>
+               
+           <a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms and Conditions</a></li>
+           <a href="{% url 'about' %}" class="footer-link">About Us</a></li>
+           <a href="{% url 'services' %}" class="footer-link">Services</a></li>
+           <a href="{% url 'contact' %}" class="footer-link">Contact Us</a></li>
         </div>
     </div>
     <p class="footer-text">© 2024 EL BLOG. All rights reserved.</p>

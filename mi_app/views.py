@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome
+from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome, About
 from .forms import TermsAndConditionsForm, ServicesForm, ContactForm, ContactMessageForm
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
@@ -164,12 +164,26 @@ def news_details(request, id):
         'images': images
         })
 
-def about(request):
-    images = Image.objects.all()
-    return render(request, 'about.html',{
-        'images': images
-    })
+from django.shortcuts import render
 
+
+def about(request):
+    images = Image.objects.all() 
+    about_content = About.objects.first()  # Asumiendo que solo hay un registro
+    context = {
+        'team_description': about_content.team_description,
+        'team_image': about_content.team_image.url if about_content.team_image else None, 
+        'what_you_can_find': about_content.what_you_can_find.split(','),  # Convierte a lista
+        'why_we_do_it': about_content.why_we_do_it,
+        'core_values': about_content.core_values.split(','),  # Convierte a lista
+        'contact_email': about_content.contact_email,
+        'facebook_url': about_content.facebook_url,
+        'whatsapp_url': about_content.whatsapp_url,
+        'footer_message': about_content.footer_message,
+        'images': images
+    }
+
+    return render(request, 'about.html', context)
 
 def services(request):
     images = Image.objects.all()

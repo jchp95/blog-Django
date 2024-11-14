@@ -103,3 +103,16 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f'Mensaje de {self.name} - {self.created_at}'
 
+class About(models.Model):
+    team_description = models.TextField()
+    team_image = models.ImageField(upload_to='team_images/', null=True, blank=True) 
+    what_you_can_find = models.TextField()  # Para almacenar una lista de elementos
+    why_we_do_it = models.TextField()
+    core_values = models.TextField()  # Para almacenar una lista de valores
+    contact_email = models.EmailField()
+    facebook_url = models.URLField()
+    whatsapp_url = models.URLField()
+    footer_message = models.TextField()
+
+    def __str__(self):
+        return "About Page Content"
