@@ -34,7 +34,7 @@
     color: #333;
     text-decoration: none;
     padding: 15px;
-    font-weight: 700;
+    font-weight: 100;
     transition: color 0.3s ease; /* Transición suave para el color */
 }
 
@@ -55,6 +55,8 @@
     margin: 3px 0;
     transition: 0.3s;
 }
+
+
 
 @media (max-width: 768px) {
     .navbar-list {
@@ -99,6 +101,7 @@
         transition: background-color 0.3s; /* Transición para el hover */
         border-radius: 4px; /* Bordes redondeados en los enlaces */
         margin: 5px; /* Margen entre los enlaces */
+        font-size: 15px;
     }
 
     .navbar-link:hover {
