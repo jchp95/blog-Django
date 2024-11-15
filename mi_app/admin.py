@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome, About
+from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome, About, Carousel
 from .models import ContactMessage
 
 
@@ -51,3 +51,4 @@ class ContactAdmin(admin.ModelAdmin):
     fields = ('title', 'description')  # Permite buscar por nombre
 
 admin.site.register(About)
+admin.site.register(Carousel)

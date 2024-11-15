@@ -1,0 +1,24 @@
+{% load static %}
+<div class="Container-carousel">
+  <a href="{% url 'services' %}" class="title-carousel">Other Services</a>
+  <h6 class="h-subtitle">discover the different services we provide</h6>
+</div>
+<div class="carousel">
+  <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for item in carousel_items %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="5000">
+        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.title }}">
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

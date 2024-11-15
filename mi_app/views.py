@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome, About
+from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome, About, Carousel
 from .forms import TermsAndConditionsForm, ServicesForm, ContactForm, ContactMessageForm
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
@@ -53,6 +53,7 @@ def home(request):
     banner_home = BannerHome.objects.first()
     articles = Article.objects.all()
     news = News.objects.all()
+    items = Carousel.objects.all()
     images = Image.objects.all()
     comments = Comment.objects.all()  # Fetch all comments
 
@@ -63,6 +64,7 @@ def home(request):
         
         'articles': articles,
         'news': news,
+        'carousel_items': items,
         'comments': comments,  # Pass comments to the template
         'images': images,
         'show_cookie_banner': show_cookie_banner,  # Pasar la variable al contexto

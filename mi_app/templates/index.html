@@ -11,6 +11,20 @@
     <meta property="og:title"         content="EL BLOG" />
     <meta property="og:description"   content="Your description" />
     <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+    <meta name="keywords"             content="" />
+    <meta name="author"               content="Thor Provider" />
+    <meta name="next-head-count"      content="6" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDFE97VFLD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GDFE97VFLD');
+    </script>
+
 
     <title>EL BLOG</title>
 
@@ -44,6 +58,8 @@
     <link href="{% static 'css/scroll.css' %}" rel="stylesheet">
     <link href="{% static 'css/slide.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+   
     
 
     <!--estilos css-->
@@ -56,10 +72,13 @@
 
 <body class="fondo"> 
     {% include 'navbar.html' %}
-    
+
 
 
     {%block content%}{%endblock%}
+
+
+
     {% include 'cookies.html' %}
     {% include 'footer.html' %}
 

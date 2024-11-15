@@ -114,12 +114,14 @@
     color: #333; /* Color del texto */
     margin-bottom: 20px; /* Espacio debajo del título */
     text-align: center; /* Centrar el texto */
-
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease; /* Transiciones suaves para color, transformación, sombra de texto y opacidad */
+    cursor: pointer;
 }
 
-
 .title:hover, .title-news:hover {
-   color: #aabc21;
+    color: #aabc21; /* Color al pasar el cursor */
+    transform: scale(1.02); /* Aumentar ligeramente el tamaño del texto */
+    opacity: 0.9; /* Cambiar ligeramente la opacidad */
 }
 
 .article-card, .news-card {
