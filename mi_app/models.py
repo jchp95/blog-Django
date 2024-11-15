@@ -45,7 +45,12 @@ class Carousel(models.Model):
 
     def __str__(self):
         return f"Carousel {self.id}"
-        
+
+class CarouselCursos(models.Model):
+    image = models.ImageField(upload_to='carousel_images/')
+
+    def __str__(self):
+        return f"CarouselCursos {self.id}"    
 
 
 class Comment(models.Model):
@@ -124,3 +129,12 @@ class About(models.Model):
 
     def __str__(self):
         return "About Page Content"
+
+class Cursos(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    video = models.FileField(upload_to='cursos_list/videos/', null=True, blank=True)  # Cambia 'image' a 'video'
+    link = models.URLField(max_length=200, blank=True, null=True)  # Campo para el enlace
+    
+    def __str__(self):
+        return self.title

@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+    <div class="tipo-curso">
+        <h1>Python Basico</h1>
+    </div>
+    <div class="cursos-container">
+        {% for curso in cursos %}
+        <div class="curso-card">
+            <div class="curso-video-container">
+                {% if curso.video %}
+                    <video class="curso-video" controls>
+                        <source src="{{ curso.video.url }}" type="video/mp4">  <!-- Asegúrate de que el tipo sea correcto -->
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                {% else %}
+                    <p>No hay video disponible.</p>
+                {% endif %}
+            </div>
+            <div class="curso-info">
+                <h2 class="curso-title">{{ curso.title }}</h2>
+                <p class="curso-description">{{ curso.description }}</p>
+                <a href="{{ curso.link }}" class="curso-link">Download</a>
+            </div>
+        </div>
+        {% empty %}
+        <p>No hay cursos disponibles.</p>
+        {% endfor %}
+    </div>
+</body>
+
+{% endblock %}

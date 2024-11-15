@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mi_app.views import home, about, services, contact, articles_details, news_details, submit_comment, register, CustomLoginView, login, like_comment, dislike_comment, submit_reply, terms_and_conditions_view, search, switch_language
+from mi_app.views import home, about, services, contact, articles_details, news_details, submit_comment, register, CustomLoginView, login, like_comment, dislike_comment, submit_reply, terms_and_conditions_view, search, switch_language, cursos
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,7 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('services/', services, name='services'),
     path('contact/', contact, name='contact'),
+    path('cursos/', cursos, name='cursos'),
     path('submit_comment/', submit_comment, name='submit_comment'),
     path('accounts/register/', register, name='register'),
     path('login/', login, name='login'),

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome, About, Carousel
+from .models import Article, News, Comment, Reply, CustomUser_CreationForm, Image, TermsAndConditions, Services, Contact, BannerHome, About, Carousel,CarouselCursos, Cursos
 from .forms import TermsAndConditionsForm, ServicesForm, ContactForm, ContactMessageForm
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
@@ -54,6 +54,7 @@ def home(request):
     articles = Article.objects.all()
     news = News.objects.all()
     items = Carousel.objects.all()
+    items_cursos = CarouselCursos.objects.all()
     images = Image.objects.all()
     comments = Comment.objects.all()  # Fetch all comments
 
@@ -65,12 +66,15 @@ def home(request):
         'articles': articles,
         'news': news,
         'carousel_items': items,
+        'carousel_cursos': items_cursos,
         'comments': comments,  # Pass comments to the template
         'images': images,
         'show_cookie_banner': show_cookie_banner,  # Pasar la variable al contexto
         'LANGUAGE_CODE': current_language,
         'banner_home': banner_home,
     })
+
+
 
 def login(request):
     if request.method == 'POST':
@@ -262,6 +266,14 @@ def search(request):
 
     return render(request, 'search_results.html', {'results': results, 'query': query, 'images': images})
 
+def cursos(request):
+    cursos_list = Cursos.objects.all()  # Puedes aplicar filtros si es necesario
+
+    # Pasar los objetos a la plantilla
+    context = {
+        'cursos': cursos_list  # 'cursos' será la variable que usarás en la plantilla
+    }
+    return render(request, 'cursos.html', context)
 
 #################################chat IA###########################################
 

@@ -1,0 +1,36 @@
+1
+00:00:03,290 --> 00:00:08,655
+Hi there. I'm Juno and I'm really excited you want to learn Python.
+
+2
+00:00:08,654 --> 00:00:10,544
+Before coming to Udacity,
+
+3
+00:00:10,544 --> 00:00:14,625
+I worked as a data scientist and used Python for data analysis,
+
+4
+00:00:14,625 --> 00:00:17,445
+machine learning, and deep learning projects.
+
+5
+00:00:17,445 --> 00:00:22,019
+Python is one of the most widely used programming languages in industry.
+
+6
+00:00:22,019 --> 00:00:25,064
+It's a powerful, general purpose language with
+
+7
+00:00:25,065 --> 00:00:28,695
+applications ranging from web development to data science.
+
+8
+00:00:28,695 --> 00:00:31,859
+In this course you'll learn how to apply Python
+
+9
+00:00:31,859 --> 00:00:35,689
+and good programming practices to solve practical problems.
+

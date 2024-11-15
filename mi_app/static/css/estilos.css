@@ -129,12 +129,12 @@
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    transition: transform 0.3s; /* Transición suave para el efecto hover */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones más suaves */
     margin-bottom: 20px;
 }
 
 .article-card:hover, .news-card:hover {
-    transform: translateY(-5px); /* Levantar la tarjeta al pasar el ratón */
+    transform: translateY(-4px); /* Efecto de elevación más notable al pasar el mouse */
 }
 
 .article-title, .news-title {

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome, About, Carousel
+from .models import News, Article, Comment, Image, TermsAndConditions, Services, Contact, BannerHome, About, Carousel,CarouselCursos, Cursos
 from .models import ContactMessage
 
 
@@ -52,3 +52,5 @@ class ContactAdmin(admin.ModelAdmin):
 
 admin.site.register(About)
 admin.site.register(Carousel)
+admin.site.register(CarouselCursos)
+admin.site.register(Cursos)

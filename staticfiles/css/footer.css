@@ -50,11 +50,13 @@
     text-decoration: none;
     color: #333;
     margin-right: 80px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
 }
 
 .footer-link:hover {
     text-decoration: none;
     color: #aabc21;
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
 }
 
 .footer-text {
@@ -68,10 +70,12 @@
     color: #333;
     margin: 30px;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
 }
 
 .social-icon:hover {
     color: #aabc21;
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
 }
 
 
