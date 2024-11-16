@@ -17,10 +17,10 @@
     filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.7)); /* Aumenta la sombra al pasar el mouse */
 }
 
-
 .navbar {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .navbar-list {
@@ -48,63 +48,129 @@
     cursor: pointer;
 }
 
+.icon {
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+}
+
 .bar {
     height: 3px;
     width: 20px;
-    background-color: #333;
+    background-color: #aabc21; /* Color de las barras del botón de hamburguesa */
     margin: 3px 0;
     transition: 0.3s;
 }
 
-
-
 @media (max-width: 768px) {
     .navbar-list {
-        display: -webkit-box; /* Inicialmente oculto */
+        display: none; /* Inicialmente oculto */
         flex-direction: column; /* Coloca los enlaces en columna */
-        position: absolute; /* Posición absoluta para superponerse */
+        position: fixed; /* Cambiado a fixed para cubrir toda la pantalla */
         top: 0; /* Distancia desde la parte superior */
-        right: 0;/* Alineado al borde derecho */
+        right: 0; /* Alineado al borde derecho */
         z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-        padding: 10px 0; /* Espaciado vertical */
+        width: 100%; /* Ancho completo de la pantalla */
+        height: 100%; /* Altura completa de la pantalla */
+        padding: 20px; /* Espaciado vertical */
         transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones */
         max-height: 400px; /* Aumentado para asegurar que el contenido se muestre */
         opacity: 0; /* Inicialmente invisible */
-        background-color: #333;
-        
-    }
-
-    .navbar-logo .logo {
-        height: 50px; /* Altura del logo */
-        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Sombra para imágenes SVG */
-        transition: transform 0.3s; /* Transición suave para el efecto hover */
+        background-color: #333; /* Fondo del menú en móvil */
     }
 
     .navbar-list.active {
-        display: -webkit-box; /* Muestra el menú cuando está activo */
+        display: flex; /* Muestra el menú cuando está activo */
         max-height: 400px; /* Altura máxima cuando está activo */
         opacity: 1; /* Totalmente visible */
-        margin-right: 40px;
-        border-radius: 8px;
     }
 
     .navbar-toggle {
         display: flex; /* Muestra el botón de hamburguesa */
         cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-        z-index: 1001; /* Asegúrate de que esté por encima del menú */
+        z-index: 9999;
     }
 
     .navbar-link {
-        padding: 10px; /* Espaciado de los enlaces */
-        color: #ffffff; /* Cambiado a blanco para mejor contraste */
+        color: #aabc21; 
         text-decoration: none; /* Sin subrayado */
-        transition: background-color 0.3s; /* Transición para el hover */
-        border-radius: 4px; /* Bordes redondeados en los enlaces */
-        margin: 5px; /* Margen entre los enlaces */
-        font-size: 15px;
+        transition: background-color 0.3s, color 0.3s; /* Transiciones para el hover */
+        font-size: 24px; /* Tamaño de fuente más grande */
+        margin: 10px 0; /* Aumenta el margen vertical entre los enlaces */
     }
 
-    .navbar-link:hover {
-        color: #aabc21;
+    .navbar-list.active {
+        display: grid;
+        max-height: 400px;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+ }
+
+    /* Estilo para el botón de hamburguesa */
+    .navbar-toggle .icon {
+        width: 30px; /* Ancho de las líneas del icono */
+        height: 3px; /* Grosor de las líneas del icono */
+        background-color: #aabc21; /* Color de las líneas, igual que la X */
+        margin: 5px 0; /* Espaciado entre las líneas */
+        transition: all 0.3s; /* Transiciones para el icono */
     }
+
+    /* Estilo para el icono de cerrar (X) */
+    .navbar-toggle.active .icon {
+        background-color: transparent; /* Oculta las líneas del icono */
+    }
+
+    .navbar-toggle.active .icon:before,
+    .navbar-toggle.active .icon:after {
+        position: absolute;
+        width: 30px; /* Ancho de las líneas */
+        height: 3px; /* Grosor de las líneas */
+        background-color: #aabc21; /* Color de la X */
+        transition: all 0.3s;
+    }
+
+    .navbar-toggle.active .icon:before {
+        transform: rotate(45deg); /* Rotación para crear la X */
+        top: 10px; /* Posición de la línea superior */
+    }
+
+    .navbar-toggle.active .icon:after {
+        transform: rotate(-45deg); /* Rotación para crear la X */
+        top: 10px; /* Posición de la línea inferior */
+    }
+}
+
+
+
+.search .search-input {
+    padding-left: calc(22px + 15px + 15px);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgaGVpZ2h0PSIyNHB4IiB3aWR0aD0iMjRweCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIyMi4zMSIgeTE9IjIzLjYyIiB4Mj0iMy43MyIgeTI9IjMuMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlOTM3MjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmODZmMjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+TWFnbmlmaWVyPC90aXRsZT48cGF0aCBmaWxsPSJ1cmwoI2xpbmVhci1ncmFkaWVudCkiIGQ9Ik0yMy4zMyAyMC4xbC00LjczLTQuNzRhMTAuMDYgMTAuMDYgMCAxIDAtMy4yMyAzLjIzbDQuNzQgNC43NGEyLjI5IDIuMjkgMCAxIDAgMy4yMi0zLjIzem0tMTcuNDgtNS44NGE1Ljk0IDUuOTQgMCAxIDEgOC40MiAwIDYgNiAwIDAgMS04LjQyIDB6Ii8+PC9zdmc+);
+    background-repeat: no-repeat;
+    background-size: 22px auto;
+    background-position: 15px 45%;
+    font-size: calc(1em + .1vw);
+    border-radius: 11px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25),0 8px 16px -8px rgba(0,0,0,.3),0 -6px 16px -6px rgba(0,0,0,.025);
+    transition: box-shadow .2s ease-in-out;
+    font-family: -apple-system,Arial,BlinkMacSystemFont,Roboto Slab,Droid Serif,Segoe UI,Ubuntu,Cantarell,Georgia,serif
+}
+
+.wf-loaded-stage2 .search .search-input {
+    font-family: Mija
+}
+
+.search .search-input:hover {
+    box-shadow: 0 30px 60px -12px rgba(50,50,93,.25),0 18px 36px -18px rgba(0,0,0,.3),0 -12px 36px -8px rgba(0,0,0,.025)
+}
+
+.search-button {
+    width: 0;
+    height: 0;
+    padding: 0
+}
+
+.enhanced .search-button {
+    display: none
 }

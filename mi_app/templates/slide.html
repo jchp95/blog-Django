@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!-- New Section for SLIDE -->
@@ -11,9 +10,8 @@
                         <img src="{{ image.image.url }}" alt="Imagen" class="card-image-slide">
                         <div class="card-content-slide">
                             <h3 class="card-title-slide">{{ image.title }}</h3>
-                            <p class="card-description-slide">{{ image.description }}
-                                <a href="{{ image.link }}" target="_blank">get it here</a>
-                            </p>
+                            <p class="card-description-slide">{{ image.description }}</p>
+                            <a href="{{ image.link }}" target="_blank" class="link-card-slide">get it here</a>
                         </div>
                     </div>
                 {% empty %}
@@ -21,5 +19,10 @@
                 {% endfor %}
             </div>
         </div>
+      
     </div>
+      <!-- Botones de navegación -->
+      <button class="prev">Prev</button>
+      <button class="next">Next</button>
 </div>
+

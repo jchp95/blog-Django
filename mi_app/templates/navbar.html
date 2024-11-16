@@ -1,33 +1,68 @@
 {% load static %}
-<div class="general-navbar">
-    <div class="navbar-logo">
-        <a href="{% url 'home' %}">
-            <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo">
-        </a>
-    </div>
-    <nav class="navbar">
-        <div class="navbar-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <div class="navbar-list">
-            <li><a href="{% url 'home' %}" class="navbar-link">Home</a></li>
-            <li><a href="{% url 'about' %}" class="navbar-link">About</a></li>
-            <li><a href="{% url 'services' %}" class="navbar-link">Services</a></li>
-            <li><a href="{% url 'contact' %}" class="navbar-link">Contact</a></li>
-            <li><a href="{% url 'cursos' %}" class="navbar-link">Courses</a></li>
-        <div/>
-    </nav>
-</div>
 
-<!--<div class="search-container">
-    <form action="{% url 'search' %}" method="get" class="search-form">
+<body>
+    <div class="general-navbar">
+        <div class="navbar-logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo">
+            </a>
+        </div>
+
+
         <div class="search">
-            <input type="text" placeholder="Search..." name="search" required class="search-input">
-            <button type="submit" class="search-button">🔍</button>
+            <form data-handler="Search" id="js-search-form" class="search-form" method="get"
+                action="https://www.google.com/webhp?q=site:smashingmagazine.com">
+                <div class="search-input-wrapper"><input class="input search-input" inputmode="search" type="search"
+                        name="q" id="js-search-input" autocomplete="off" placeholder="Search articles..."
+                        aria-label="Search articles">
+                    <input type="hidden" name="sitesearch" value="smashingmagazine.com">
+                    <a id="js-search-clear-button" class="search-clear-button" tabindex="-1" role="button"><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.35 15.36" width="16" height="16"
+                            tabind="-1">
+                            <title>Clear Search</title>
+                            <path fill="#e33b2a"
+                                d="M8.38 11.41c-.5-.5-.78-.52-1.33.0L4 14.49c-1.18 1.18-1.7 1.18-3-.16s-1.18-2-.18-3L4 8.14A.69.69.0 003.93 7l-3-3c-1-1-1.13-1.81.0-3s1.9-1.21 3.13.0L7 4a.66.66.0 001.11.0c.63-.65 2.49-2.51 3.28-3.35a1.46 1.46.0 012.3-.15c.24.24.47.42.89.84.86.86.94 1.57.05 2.46l-3.27 3.26c-.36.34-.52.58-.16.94l3.27 3.27c1.1 1.1 1.23 1.7.05 2.88l-.58.58a1.59 1.59.0 01-2.46-.21z">
+                            </path>
+                        </svg></a>
+                </div><input type="submit" class="search-button btn" name="submit" value="Search"
+                    id="js-search-submit"><span></span>
+            </form>
         </div>
-    </form>
-</div>-->
 
+        <nav class="navbar">
+            <div class="navbar-toggle" id="mobile-menu">
 
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+
+            </div>
+            <ul class="navbar-list" id="navbar-list">
+                <li class="navbar-link"><a href="{% url 'home' %}">Home</a></li>
+                <li class="navbar-link"><a href="{% url 'about' %}">About</a></li>
+                <li class="navbar-link"><a href="{% url 'services' %}">Services</a></li>
+                <li class="navbar-link"><a href="{% url 'contact' %}">Contact</a></li>
+                <li class="navbar-link"><a href="{% url 'cursos' %}">Courses</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        const toggleButton = document.getElementById('mobile-menu');
+        const navbarList = document.getElementById('navbar-list');
+
+        toggleButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Evita que el clic en el botón cierre el menú
+            navbarList.classList.toggle('active'); // Activa o desactiva el menú
+            toggleButton.classList.toggle('active'); // Cambia el estado del botón
+        });
+
+        // Cierra el menú si se hace clic fuera de él
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = navbarList.contains(event.target) || toggleButton.contains(event.target);
+            if (!isClickInsideMenu) {
+                navbarList.classList.remove('active'); // Oculta el menú
+                toggleButton.classList.remove('active'); // Cambia el estado del botón
+            }
+        });
+    </script>
+</body>

@@ -64,21 +64,31 @@
     margin-bottom: 20px; /* Espacio inferior para separar el mensaje de error del botón */
 }
 
+.container-buttom{
+    display: flex;
+    justify-content: center;
+}
+
 /* Estilo del botón de inicio de sesión */
 .btn-primary {
-    background-color: #007bff; /* Color de fondo del botón */
     border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
+    background-color: #3333332c; /* Color de fondo del botón */
+    border-radius: 50px; /* Bordes redondeados */
     padding: 10px 20px; /* Espaciado interno del botón */
     font-size: 16px; /* Tamaño de fuente del botón */
-    transition: background-color 0.3s; /* Transición suave para el fondo */
-    width: 100%; /* Botón ocupa el ancho completo */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
+    width: 40%; /* Botón ocupa el ancho completo */
     margin-bottom: 20px; /* Espacio inferior para separar el botón del pie de página */
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
 }
 
 /* Estilo al pasar el mouse sobre el botón */
 .btn-primary:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    background-color: #aabc21; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    color: #333; /* Color del texto */
 }
 
 /* Estilo del botón de Google */

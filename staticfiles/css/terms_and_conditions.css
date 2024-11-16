@@ -27,14 +27,6 @@
     justify-content: center;    
 }
 
-/* Estilo para las secciones */
-section {
-    margin-bottom: 20px; /* Espacio entre secciones */
-    padding: 15px; /* Espaciado interno */
-    border-left: 4px solid #aabc21; /* Línea de color a la izquierda */
-    background-color: #aabc211c; /* Fondo gris claro */
-}
-
 /* Estilo de los encabezados de sección */
 h2 {
     font-size: 1.5em; /* Tamaño de fuente para encabezados */

@@ -89,6 +89,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .Container-carousel {
+        margin-top: 20px;
+    }
+
     .carousel-inner {
         border-radius: 20px; /* Bordes redondeados para el contenedor interno */
         
