@@ -1,0 +1,326 @@
+.fondo {
+    background-color: #ffffff;
+    background-size: cover;
+}
+
+/* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+
+.banner-image-container {
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: start; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: relative; /* Necesario para el posicionamiento del degradado */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.banner-gradient {
+    position: relative; /* Posiciona el contenedor relativo para el degradado */
+    
+    overflow: hidden; /* Oculta el desbordamiento del degradado */
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%); /* Degradado de arriba a abajo */
+}
+
+.banner-home-image {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 1200px; /* Establece una altura máxima para la imagen */
+    
+    display: block; /* Asegura que no haya espacios debajo de la imagen */
+}
+
+
+
+/*####################################################################################*/
+.container-alert{
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(-20px); /* Mover hacia arriba inicialmente */
+    transition: opacity 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transiciones suaves */
+    visibility: hidden; /* Ocultar el elemento inicialmente */
+}
+
+.alert.show {
+    opacity: 1; /* Opacidad completa */
+    transform: translateY(0); /* Posición original */
+    visibility: visible; /* Asegúrate de que sea visible */
+}
+
+.alert.hide {
+    opacity: 0; /* Desvanecer */
+    transform: translateY(-20px); /* Mover hacia arriba al ocultar */
+}
+
+.alert-success {
+    color: #333;
+    background-color: #d1e2d5;
+    border: none;
+    border-radius: 50px;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+/*##################################################################################*/
+
+.container-pro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles-container, .news-container {
+    padding: 10px;
+    margin-bottom: 20px; /* Espacio entre secciones */
+}
+
+.title, .title-news {
+    display: flex;
+    font-size: 2em; /* Tamaño de fuente grande */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-align: center; /* Centrar el texto */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease, opacity 0.3s ease; /* Transiciones suaves para color, transformación, sombra de texto y opacidad */
+    cursor: pointer;
+}
+
+.title:hover, .title-news:hover {
+    color: #aabc21; /* Color al pasar el cursor */
+    transform: scale(1.02); /* Aumentar ligeramente el tamaño del texto */
+    opacity: 0.9; /* Cambiar ligeramente la opacidad */
+}
+
+.article-card, .news-card {
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones más suaves */
+    margin-bottom: 20px;
+}
+
+.article-card:hover, .news-card:hover {
+    transform: translateY(-4px); /* Efecto de elevación más notable al pasar el mouse */
+}
+
+.article-title, .news-title {
+    font-size: 1.5em; /* Tamaño de fuente para el título del artículo/noticia */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.article-content, .news-content {
+    margin-bottom: 10px; /* Espacio debajo del contenido */
+}
+
+.article-date, .news-date {
+    font-size: 0.9em; /* Tamaño de fuente más pequeño para la fecha */
+    color: #666; /* Color gris para la fecha */
+}
+
+.article-link{
+    color: #aabc21;
+}
+
+
+
+
+.news-image {
+    max-width: 100%; /* Asegura que la imagen no exced a el ancho de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+@media (max-width: 600px) {
+    .container-pro {
+        display: contents;
+        padding: 5px; /* Reducir el espaciado interno en móviles */
+    }
+
+    .articles-container, .news-container {
+        width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+        margin: 0;
+    }
+
+    .title, .title-news {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em; /* Tamaño de fuente más pequeño en móviles */
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 15px; /* Espacio debajo del título */
+    }
+
+    .grid-container {
+        display: grid; /* Usar cuadrícula para disposición */
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        gap: 10px; /* Espacio entre tarjetas */
+    }
+
+    .article-card, .news-card {
+        width: 100%; /* Asegurar que las tarjetas ocupen todo el ancho */
+        padding: 15px; /* Espaciado interno en las tarjetas */
+        box-sizing: border-box; /* Incluir padding en el ancho total */
+    }
+
+    .article-title, .news-title {
+        font-size: 1.2em; /* Tamaño de fuente para el título más pequeño en móviles */
+    }
+
+    .article-content, .news-content {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño para el contenido */
+    }
+
+    .article-date, .news-date {
+        font-size: 0.8em; /* Tamaño de fuente más pequeño para la fecha */
+    }
+    /* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+}
+
+/*###############################################################################################*/
+
+/*######################################################################################################*/
+
+.like-button {
+    cursor: pointer;
+}
+
+.dislike-button {
+    cursor: pointer;
+}
+
+.container-slide-section {
+    background-color: #9d77f776;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /* Para ocultar las tarjetas que están fuera de vista */
+}
+
+.slide-section {
+    padding: 20px;
+    margin: auto;
+    justify-content: flex-start;
+    display: flex;
+    width: 920px;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    /* Para ocultar las tarjetas que están fuera de vista */
+}
+
+.card-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* Transición suave para el autoslide */
+}
+
+.card-slide {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    width: 200px;
+    /* Ajusta el ancho según sea necesario */
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-slide {
+    width: 100%;
+    max-height: 150px;
+    /* Altura máxima */
+    object-fit: cover;
+    /* Mantiene la relación de aspecto */
+}
+
+.card-content-slide {
+    padding: 10px;
+}
+
+.card-title-slide {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.card-description-slide {
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+.cookie-banner {
+    position: fixed;
+    bottom: -100px;
+    /* Comienza fuera de la vista */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    /* Color de fondo */
+    color: rgb(255, 255, 255);
+    /* Color del texto */
+    padding: 20px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Centrar el texto */
+    transition: bottom 0.5s ease;
+    /* Transición suave */
+    z-index: 1000;
+    /* Asegurarse de que esté en la parte superior */
+}
+
+.cookie-banner.show {
+    bottom: 0;
+    /* Posición visible */
+}
+
+.cookie-banner button {
+    margin: 0 10px;
+    /* Espaciado entre botones */
+    padding: 10px 20px;
+    /* Espaciado interno de botones */
+    background-color: #ffffff9d;
+    /* Color de fondo de botones */
+    border: none;
+    /* Sin borde */
+    color: rgb(37, 37, 37);
+    /* Color del texto */
+    cursor: pointer;
+    /* Cambiar cursor a puntero */
+    border-radius: 50px;
+    /* Bordes redondeados */
+}
+
+.cookie-banner button:hover {
+    background-color: #e1b12c;
+    /* Color de fondo al pasar el ratón */
+}

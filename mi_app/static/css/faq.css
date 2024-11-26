@@ -1,0 +1,81 @@
+/* faq.css */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.h-faq {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #3333331f;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Añadido transform */
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.faq-question {
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Añadido color */
+}
+
+.faq-question:hover {
+    background-color: #aabc21;
+    color: #fff; /* Cambiar color del texto al hacer hover */
+}
+
+.faq-answer {
+    padding: 15px;
+    background-color: #f1f1f1;
+    overflow: hidden; /* Evita que el contenido desborde */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Añadido transición */
+}
+
+.faq-answer p {
+    margin: 0; /* Eliminar margen para un mejor espaciado */
+}
+
+/* Cuando la respuesta está visible */
+.faq-answer.show {
+    max-height: 200px; /* Ajusta este valor según el contenido */
+    padding: 15px; /* Restaura el padding al abrir */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .faq-container {
+        padding: 10px;
+    }
+
+    .h-faq {
+        font-size: 24px; /* Asegúrate de que el tamaño del título sea adecuado */
+    }
+
+    .faq-question {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .faq-answer {
+        padding: 10px;
+    }
+}

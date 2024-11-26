@@ -1,0 +1,25 @@
+{% load static %}
+<div class="Container-carousel scroll-fade">
+  <a href="{% url 'lista_cursos' %}" class="title-carousel">Cursos Disponibles >>></a>
+  <h6 class="h-subtitle">Explora nuestros cursos disponibles para mejorar tus habilidades y avanzar en tu carrera</h6>
+</div>
+<div class="carousel">
+  <div id="carouselCursos" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for items_cursos in carousel_cursos %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="5000">
+        <img src="{{ items_cursos.image.url }}" class="d-block w-100" alt="{{ items_cursos.title }}">
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCursos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselCursos" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</div>
+

@@ -1,0 +1,164 @@
+
+
+/* Contenedor de servicios */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Tarjetas de servicio */
+.contact-card {
+    background-color: #ffffff98;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px); /* Ajusta el ancho según el tamaño de la pantalla */
+    transition: transform 0.3s;
+}
+
+.contact-image{
+    display: flex;
+    padding: 20px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 0;
+    background-color: #ffffff98;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.img-ubicacion{
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.img-ubicacion:hover {
+    transform: scale(1.05);
+}
+
+/* Efecto de hover en las tarjetas */
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos */
+.contact-card h3 {
+    color: #191919;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Descripciones */
+.contact-card p {
+    color: #191919;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-card {
+        flex: 1 1 calc(45% - 40px); /* Dos columnas en pantallas más pequeñas */
+    }
+    /* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        flex: 1 1 100%; /* Una columna en pantallas muy pequeñas */
+    }
+    /* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+}
+
+
+.contact-method {
+    background-color: #f9f9f94f;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.contact-method h2 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+.contact-method p {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+.contact-method label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1f1f1f;
+}
+
+.contact-method input,
+.contact-method textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.245);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.contact-method input:focus,
+.contact-method textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.contact-method button {
+    background-color: #ffffff56;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.contact-method button:hover {
+    background-color: #007bff6e;
+}

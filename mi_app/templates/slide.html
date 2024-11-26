@@ -1,0 +1,47 @@
+{% load static %}
+
+<head>
+    <title>Slide venta de articulos electronicos</title>
+    <meta name="description" content="Descubre nuestra galería de imágenes de artículos electrónicos. Explora productos destacados, ofertas especiales y recursos útiles para mejorar tu experiencia de compra. ¡No te lo pierdas!">
+</head>
+
+<body>
+    <!--New Section for SLIDE-->
+    <div class="container-slide-section">
+        <div class="slide-section">
+            <div class="slide-container">
+                <div class="card-wrapper">
+                    {% for image in images %}
+                    <div class="card-slide">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }} - {{ image.description }}" class="card-image-slide">
+                        <div class="card-content-slide">
+                            <h3 class="card-title-slide">{{ image.title }}</h3>
+                            <p class="card-description-slide">{{ image.description }}</p>
+                            <a href="{{ image.link }}" target="_blank" class="link-card-slide">Comprar</a>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No images available..</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Botones de navegación -->
+        <button class="prev">-</button>
+        <button class="next">+</button>
+    </div>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            "name": "Slide venta de articulos electronicos",
+            "description": "Descubre nuestra galería de imágenes de artículos electrónicos. Explora productos destacados, ofertas especiales y recursos útiles para mejorar tu experiencia de compra. ¡No te lo pierdas!",
+            "image": [
+                {% for image in images %}
+                "{{ image.image.url }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ]
+        }
+    </script>
+</body>

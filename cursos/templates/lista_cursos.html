@@ -1,0 +1,40 @@
+<!-- templates/cursos/lista_cursos.html -->
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <script>
+        function toggleCapitulos(cursoId) {
+            const capitulos = document.getElementById(`capitulos-${cursoId}`);
+            capitulos.style.display = capitulos.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-lista-cursos">
+        <h1 class="h-lista-cursos">Bienvenidos a nuestros cursos gratuitos y al alcance de todos</h1>
+        <div class="curso-list">
+            {% for curso in cursos %}
+                <div class="curso-item">
+                    <h2 class="subtitle-lista-cursos" onclick="toggleCapitulos({{ curso.id }})">{{ curso.nombre }}</h2>
+                    <div id="capitulos-{{ curso.id }}" class="capitulos" style="display: none;">
+                        <ul class="u-lista-cursos">
+                            {% for capitulo in curso.capitulos.all %}
+                                <li class="l-lista-cursos">{{ capitulo.titulo }}</li>
+                            {% empty %}
+                                <li class="l-lista-cursos">No hay capítulos disponibles.</li>
+                            {% endfor %}
+                            <div class="container-link-lista-cursos">
+                                <a href="{% url 'curso_detail' curso.id %}" class="link-lista-cursos">Acceder al curso</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div> 
+    </div>                                                     
+</body>
+
+{% endblock %}

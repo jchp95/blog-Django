@@ -1,0 +1,56 @@
+<body>
+    <div class="container-principal-vis-susc-rat">
+        <div class="row">
+            <!-- Card de Visitas -->
+            <div class="col-md-4">
+                <div class="card-visitas">
+                    <div class="card-body-visitas">
+                        <h5 class="card-title-visitas">Visitas</h5>
+                        <p class="card-text-visitas" id="visitas">{{ total_visitas }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Suscriptores -->
+            <div class="col-md-4">
+                <div class="card-suscriptores">
+                    <div class="card-body-suscriptores">
+                        <h5 class="card-title-suscriptores">Suscriptores</h5>
+                        <p class="card-text-suscriptores" id="suscriptores">{{ total_subscribers }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Rating -->
+            <div class="col-md-4">
+                <div class="card-calificación">
+                    <div class="card-body-calificación">
+                        <h5 class="card-title-calificación">Calificación</h5>
+                        <div id="rating" class="rating">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <div class="container-boton-calificaciones">
+                            <button id="submitRating" class="btn-primary-calificaciones">Enviar</button>
+                        </div>
+                        <div id="ratingResult" class="rating-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h5 class="card-title-calificación">EL BLOG</h5>
+        <div class="star-rating">
+            <span class="s-rating filled" data-value="1">&#9733;</span>
+            <span class="s-rating filled" data-value="2">&#9733;</span>
+            <span class="s-rating filled" data-value="3">&#9733;</span>
+            <span class="s-rating filled" data-value="4">&#9733;</span>
+            <span class="s-rating filled" data-value="5">&#9733;</span>
+        </div>
+        <div id="average-rating" class="average-rating"> <span id="average-value" class="average-value"></span>/5</div>
+    </div>
+
+    
+</body>

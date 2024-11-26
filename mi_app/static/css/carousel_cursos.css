@@ -1,0 +1,139 @@
+.Container-carousel {
+    display: grid;
+    margin-bottom: 20px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-carousel {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+.h-subtitle {
+    display: flex;
+    justify-content: center;
+    color: #aabc21;
+    text-align: center;
+}
+
+.title-carousel:hover {
+    color: #aabc21; /* Color al pasar el cursor */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+}
+
+.carousel {
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden; /* Para ocultar las esquinas redondeadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 1000px; /* Limitar el ancho máximo del carrusel */
+    margin: 0 auto; /* Centrar el carrusel en la página */
+}
+
+.carousel-title {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.carousel-inner {
+    border-radius: 20px; /* Bordes redondeados para el contenedor interno */
+}
+
+/* Estilos para el carrusel de cursos con transición de deslizamiento */
+.carousel-cursos .carousel-item {
+    opacity: 0;
+    transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y transformación */
+}
+
+.carousel-cursos .carousel-item.active {
+    opacity: 1;
+    transform: translateX(0); /* Vuelve a su posición original */
+}
+
+.carousel-cursos .carousel-item-next,
+.carousel-cursos .carousel-item-prev {
+    opacity: 1; /* Asegura que los elementos que están en movimiento sean visibles */
+    transform: translateX(0); /* Mantiene la posición original */
+}
+
+.carousel-cursos .carousel-item-prev {
+    transform: translateX(-100%); /* Mueve el elemento anterior a la izquierda */
+}
+
+.carousel-cursos .carousel-item-next {
+    transform: translateX(100%); /* Mueve el elemento siguiente a la derecha */
+}
+
+.carousel-item img {
+    border-radius: 20px; /* Bordes redondeados para las imágenes */
+    object-fit: cover; /* Ajustar la imagen para que cubra el contenedor */
+    height: 300px; /* Ajusta la altura según tus necesidades */
+}
+
+.carousel-caption {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados para el texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    border-radius: 50%; /* Hacer los controles redondeados */
+    width: 50px;
+}
+
+.carousel-control-prev-icon:active,
+.carousel-control-next-icon:active {
+    transform: scale(1.1); /* Efecto de escala al hacer clic */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .Container-carousel {
+        margin-top: 20px;
+    }
+
+    .carousel-inner {
+        border-radius: 20px; /* Bordes redondeados para el contenedor interno */
+    }
+
+    .carousel-item img {
+        border-radius: 20px; /* Bordes redondeados para las imágenes */
+        object-fit: cover; /* Ajustar la imagen para que cubra el contenedor */
+        height: 200px; /* Ajusta la altura según tus necesidades */
+    }
+
+    .carousel {
+        max-width: 400px; /* Limitar el ancho máximo del carrusel */
+    }
+
+    .title-carousel {
+        font-size: 30px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+    }
+}
+
+/* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}

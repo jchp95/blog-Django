@@ -1,0 +1,68 @@
+{% load static %}
+
+<!-- Nueva sección para Comentarios y registro -->
+<div class="comments-section scroll-fade">
+    <h2>Deja tu Comentario</h2>
+    <p>Para dejar un comentario, por favor 
+        <a href="{% url 'register' %}">Regístrate aquí</a> | 
+        <a href="{% url 'login' %}">Iniciar Sesión</a> | 
+        
+        <a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+    <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+        {% csrf_token %}
+    </form>
+    </p>
+    
+    <form action="{% url 'submit_comment' %}" method="POST">
+        {% csrf_token %}
+        <textarea name="comment" rows="4" placeholder="Ingresa tu comentario aquí..." required></textarea>
+        <br>
+        <button type="submit" class="comments-section-button">Enviar Comentario</button>
+    </form>
+
+    <h3>Comentarios:</h3>
+    <ul id="comments-container">  <!-- Asegúrate de que el ID sea 'comments-container' -->
+        {% for comment in comments %}
+            <li class="comment" id="comment-{{ comment.id }}">
+                <strong>{{ comment.user.username }}</strong>: <span>{{ comment.content }}</span>
+                <em>{{ comment.created_at }}</em>
+                <span id="like-{{ comment.id }}" class="like-button" onclick="likeComment({{ comment.id }})">👍 {{ comment.likes }}</span>
+                <span id="dislike-{{ comment.id }}" class="dislike-button" onclick="dislikeComment({{ comment.id }})">👎 {{ comment.dislikes }}</span>
+                
+                <!-- Nuevo ícono de comentarios -->
+                <span id="reply-count-{{ comment.id }}" class="reply-count">
+                    💬 {{ comment.replies.count }}  <!-- Muestra la cantidad de respuestas -->
+                </span>
+
+                <!-- Formulario para responder al comentario -->
+                <div class="reply-section">
+                    <button onclick="toggleReplyForm({{ comment.id }})" class="comments-section-button">Responder</button>
+                    <button onclick="toggleReplies({{ comment.id }})" class="view-replies-button">Ver Comentarios</button>
+                    <div id="reply-form-{{ comment.id }}" class="reply-form" style="display: none;">
+                        <form action="{% url 'submit_reply' %}" method="POST">
+                            {% csrf_token %}
+                            <textarea name="reply" rows="2" placeholder="Ingresa tu respuesta aquí..." required></textarea>
+                            <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                            <br>
+                            <button type="submit" class="view-replies-button">Comentar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Mostrar respuestas -->
+                <ul class="replies-container" id="replies-container-{{ comment.id }}" style="display: none;">
+                    {% for reply in comment.replies.all %}
+                        <li class="reply">
+                            <strong>{{ reply.user.username }}</strong>: <span>{{ reply.content }}</span>
+                            <em>{{ reply.created_at }}</em>
+                        </li>
+                    {% empty %}
+                        <li>No hay respuestas aún.</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            <li>No hay comentarios aún.</li>
+        {% endfor %}
+    </ul>
+</div>

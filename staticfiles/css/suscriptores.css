@@ -1,0 +1,135 @@
+/* Estilos generales para el contenedor principal */
+.container-principal-vis-susc-rat {
+    padding: 20px;
+    background: linear-gradient(270deg, #623fef, #feb47b, #a28cfc);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+    display: flex;
+}
+
+/* Estilos para las tarjetas */
+.card-visitas, .card-suscriptores, .card-calificación {
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-visitas:hover, .card-suscriptores:hover, .card-calificación:hover {
+    transform: scale(1.05); /* Escala al hacer hover */
+}
+
+/* Estilos para los títulos de las tarjetas */
+.card-title-visitas, .card-title-suscriptores, .card-title-calificación {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Inicio de la animación */
+    }
+    50% {
+        background-position: 100% 50%; /* Mitad de la animación */
+    }
+    100% {
+        background-position: 0% 50%; /* Fin de la animación */
+    }
+}
+
+/* Estilos para el texto de las tarjetas */
+.card-text-visitas, .card-text-suscriptores {
+    font-size: 100px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para el sistema de calificación */
+.rating {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    font-size: 30px; /* Tamaño de las estrellas */
+    color: white; /* Color amarillo para las estrellas */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+}
+
+.star:hover {
+    color: #aabc21; /* Color más brillante al hacer hover */
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+}
+
+.average-rating {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.s-rating {
+    font-size: 30px; /* Tamaño de las estrellas */
+    color: white; /* Color amarillo para las estrellas */
+}
+
+.s-rating .filled {
+    color: gold; /* Color de las estrellas llenas */
+}
+
+.average-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.container-boton-calificaciones {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón de enviar */
+.btn-primary-calificaciones {
+    background-color: #ffffff; /* Color de fondo del botón */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    color: #333; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.btn-primary-calificaciones:hover {
+    background-color: #aabc21; /* Color más oscuro al hacer hover */
+}
+
+/* Media Queries para ajustar el tamaño del texto en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .card-title-visitas, .card-title-s uscriptores, .card-title-calificación {
+        font-size: 16px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .card-text-visitas, .card-text-suscriptores {
+        font-size: 8vw; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+}

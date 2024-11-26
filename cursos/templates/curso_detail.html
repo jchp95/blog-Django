@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+
+    
+    <div class="curso-detail scroll-fade">
+        <h1 class="h-curso-detail scroll-fade">{{ curso.nombre }}</h1>
+        <p class="p-curso-detail scroll-fade">{{ curso.descripcion }}</p>  <!-- Muestra la descripción del curso -->
+        
+        <h2 class="h-title-capitulos scroll-fade">Capítulos:</h2>
+        <ul class="capitulo-list scroll-fade">
+            {% for capitulo in capitulos %}
+                <li>
+                    <h3 class="capitulo-title scroll-fade" onclick="toggleVideos('{{ capitulo.id }}')">{{ capitulo.titulo }}</h3>  <!-- Título del capítulo -->
+                    <div class="video-container scroll-fade" id="videos-{{ capitulo.id }}" style="display: none;"> <!-- Ocultar por defecto -->
+                        <div class="video-card-container scroll-fade">
+                            {% for video in capitulo.videos_list %}
+                                <div class="video-card scroll-fade">
+                                    <h4>{{ video.titulo }}</h4>  <!-- Título del video -->
+                                    <video controls>
+                                        <source src="{{ video.archivo_video.url }}" type="video/mp4">
+                                        Tu navegador no soporta la etiqueta de video.
+                                    </video>
+                                </div>
+                            {% empty %}
+                                <p>No hay videos disponibles para este capítulo.</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+                <li>No hay capítulos disponibles para este curso.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% include 'comentarios.html' %}
+    
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+
+
+<body>
+    <div id="chat-icon" class="chat-icon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer;">
+        <i class="fas fa-comments" style="font-size: 30px;"></i> <!-- Ícono de chat de Font Awesome -->
+    </div>
+
+    <!-- Offcanvas para el chat -->
+    <div id="chatOffcanvas" class="chatOffcanvas" style="display: none; position: fixed; top: 0; right: 0; height: 100%; width: 300px; background-color: white; box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); z-index: 1000;">
+        <div class="container-title-chat">
+             <h1 class="h-chat">Asistente EL BLOG</h1>
+        </div>
+        <div id="chat-container" class="chat-container"></div>
+        <form id="chat-form" class="chat-form">
+            {% csrf_token %}
+            <input type="text" id="message" class="message" placeholder="Escribe tu mensaje..." required>
+            <button type="submit" class="button">Enviar</button>
+        </form>
+        <div class="container-boton-cerrar">
+             <button id="close-chat" class="button close-chat">Cerrar asistente</button>
+         </div>
+    </div>
+
+</body>

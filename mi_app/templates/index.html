@@ -1,0 +1,177 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <title>EL BLOG</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PLBHDD2Z');</script>
+    <!-- End Google Tag Manager -->
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:url"                 content="https://elblog.onrender.com/" />
+    <meta property="og:type"                content="website" />
+    <meta property="og:title"               content="EL BLOG" />
+    <meta property="og:description"         content="El BLOG es un refugio de conocimiento y reflexión, donde cada artículo y noticia relevante busca inspirar, informar y conectar a nuestra comunidad con las voces del mundo." />
+    <meta property="og:image"               content="https://elblog.onrender.com/path/image.jpg" />
+    <meta name="keywords"                   content="" />
+    <meta name="author"                     content="EL BLOG" />
+    <meta name="next-head-count"            content="6" />
+
+
+
+
+    <!--estilos boostrap5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/icon-512x512.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
+
+
+    <!--estilos css-->
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/about.css' %}" rel="stylesheet">
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+    <link href="{% static 'css/details.css' %}" rel="stylesheet">
+    <link href="{% static 'css/comentarios.css' %}" rel="stylesheet">
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <link href="{% static 'css/terms_and_conditions.css' %}" rel="stylesheet">
+    <link href="{% static 'css/search_results.css' %}" rel="stylesheet">
+    <link href="{% static 'css/search.css' %}" rel="stylesheet">
+    <link href="{% static 'css/services.css' %}" rel="stylesheet">
+    <link href="{% static 'css/contact.css' %}" rel="stylesheet">
+    <link href="{% static 'css/scroll.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slide.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/carousel_cursos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/faq.css' %}" rel="stylesheet">
+    
+    <link href="{% static 'css/lista_cursos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/curso_detail.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/suscriptores.css' %}" rel="stylesheet">
+
+
+    <link href="{% static 'css/chat.css' %}" rel="stylesheet">
+
+
+
+    <!--estilos css-->
+    <link href="{% static 'fontawesome/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
+
+    <script type="text/javascript">
+        // Almacena el token CSRF en una variable global
+        const csrftoken = "{{ csrf_token }}";
+        document.cookie = "csrftoken=" + csrftoken; // Almacena el token CSRF en una cookie
+    </script>    
+
+</head>
+
+<body class="fondo">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLBHDD2Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    {% include 'navbar.html' %}
+    
+
+
+    {%block content%}{%endblock%}
+
+    
+
+    {% include 'cookies.html' %}
+    {% include 'footer.html' %}
+    {% include 'chat.html' %}
+
+    <!--ESCRIPT-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"></script>
+    
+    
+        <script src="{% static 'js/app.js' %}" rel="stylesheet"></script>
+        <script src="{% static 'js/contact.js' %}" rel="stylesheet"></script>
+        <script src="{% static 'js/search.js' %}" rel="stylesheet"></script>
+        <script src="{% static 'js/navbar.js' %}" rel="stylesheet"></script>
+        <script src="{% static 'js/slide.js' %}" rel="stylesheet"></script>
+        <script src="{% static 'js/chat.js' %}" rel="stylesheet"></script>
+        <script src="{% static 'js/cursos.js' %}" rel="stylesheet"></script>
+    
+ 
+
+
+
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "876fa305475646328736f5995379d784"}'></script><!-- End Cloudflare Web Analytics -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.scroll-fade');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Dejar de observar el elemento una vez que es visible
+                    }
+                });
+            });
+
+            elements.forEach(element => {
+                observer.observe(element); // Comenzar a observar cada elemento
+            });
+        });
+    </script>
+</body>
+
+
+
+</html>

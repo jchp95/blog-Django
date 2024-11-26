@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<div class="search-results-container">
+    <h2>Resultados de Búsqueda</h2>
+    
+    {% if error_message %}
+        <div class="alert alert-danger">
+            {{ error_message }}
+        </div>
+    {% endif %}
+
+    {% if query %}
+        <p>Has buscado: <strong>"{{ query }}"</strong></p>
+    {% endif %}
+
+    {% if results %}
+        <ul class="search-results">
+            {% for result in results %}
+                <li class="search-result-item">
+                    <div class="result-header">
+                        <h3>
+                            <a href="{% url 'articles_details' result.object.id %}">
+                                {% autoescape off %}{{ result.highlighted_title|highlight:query }}{% endautoescape %}
+                            </a>
+                        </h3>
+                        <small class="result-date">Creado el: {{ result.created_at|date:"d M Y" }}</small>
+                    </div>
+                    <p class="result-excerpt">{% autoescape off %}{{ result.highlighted_content|truncatewords:50|highlight:query }}{% endautoescape %}</p>
+                    
+                    {% if result.image %}
+                        <img src="{{ result.image.url }}" alt="{{ result.highlighted_title }}" class="result-image">
+                    {% endif %}
+                    
+                    <div class="result-details">
+                        <p><strong>Título:</strong> {% autoescape off %}{{ result.title }}{% endautoescape %}</p>
+                        <p><strong>Contenido:</strong> {% autoescape off %}{{ result.content|truncatewords:50|highlight:query }}{% endautoescape %}</p>
+                        {% if result.user %}
+                            <p><strong>Usuario:</strong> {{ result.user }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="result-tags">
+                        {% for tag in result.tags.all %}
+                            <span class="tag">{{ tag.name }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{% url 'articles_details' result.object.id %}" class="read-more">Leer más</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-results">No se encontraron resultados para "{{ query }}".</p>
+    {% endif %}
+</div>
+{% endblock %}

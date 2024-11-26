@@ -1,0 +1,185 @@
+/* Estilo del ícono de chat */
+.chat-icon {
+    background-color: #ffffff27; /* Color de fondo azul */
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+}
+
+#chat-icon:hover {
+    background-color: #3333334e; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar el tamaño del ícono */
+}
+
+/* Estilo del offcanvas */
+.chatOffcanvas {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 10px; /* Espaciado interno */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.container-title-chat {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 10px; /* Espaciado interno opcional */
+    border-radius: 8px; /* Bordes redondeados opcional */
+    background-color: #ffffff; /* Fondo blanco opcional para destacar la sombra */
+    margin-bottom: 10px;
+}
+
+/* Estilo del encabezado del chat */
+.h-chat {
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    margin: 0;
+    padding: 5px;
+    
+}
+
+/* Estilo del contenedor de chat */
+.chat-container {
+    background-color: #f9f9f9; /* Fondo del contenedor de chat */
+    border-radius: 5px;
+    padding: 10px;
+    height: calc(100% - 150px); /* Altura ajustada */
+    overflow-y: auto; /* Desplazamiento vertical */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilo de los mensajes del usuario */
+.user-message {
+    background-color: #dcf8c6; /* Color de fondo verde claro */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px;
+    margin-bottom: 15px;
+    max-width: 80%; /* Limitar el ancho de la burbuja */
+    align-self: flex-end; /* Alinear a la derecha */
+    position: relative; /* Para el pseudo-elemento */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo de los mensajes del asistente */
+.assistant-message {
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px;
+    margin-bottom: 15px;
+    max-width: 80%; /* Limitar el ancho de la burbuja */
+    align-self: flex-start; /* Alinear a la izquierda */
+    position: relative; /* Para el pseudo-elemento */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Pseudo-elemento para crear la "punta" de la burbuja del usuario */
+.user-message::after {
+    content: '';
+    position: absolute;
+    bottom: 100%; /* Posición arriba de la burbuja */
+    right: 15px; /* Ajustar la posición */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #dcf8c6 transparent; /* Color de la punta */
+}
+
+/* Pseudo-elemento para crear la "punta" de la burbuja del asistente */
+.assistant-message::after {
+    content: '';
+    position: absolute;
+    bottom: 100%; /* Posición arriba de la burbuja */
+    left: 15px; /* Ajustar la posición */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent; /* Color de la punta */
+}
+
+/* Estilo del formulario de chat */
+.chat-form {
+    display: flex; /* Flexbox para alinear elementos */
+    gap: 10px; /* Espacio entre elementos */
+    align-items: baseline }
+
+/* Estilo del campo de mensaje */
+.message {
+    flex: 1;
+    padding: 5px 10px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 20px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave */
+}
+
+.message:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilo del botón de enviar */
+.button {
+    border: none; /* Sin borde */
+    background-color: #3333332c; /* Color de fondo del botón */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 2px 8px; /* Espaciado interno del botón */
+    font-size: 10px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
+    margin-bottom: 20px; /* Espacio inferior para separar el botón del pie de página */
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+.button:hover {
+    background-color: #aabc21; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    color: #333; /* Color del texto */
+}
+
+
+/* Estilo del botón cerrar */
+.container-boton-cerrar{
+    display: flex;
+    justify-content: center;
+}
+
+.close-chat {
+    background-color: #dc3545; /* Color rojo */
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.close-chat:hover {
+    background-color: #c82333; /* Color rojo más oscuro al pasar el mouse */
+}
+
+
+
+@media (max-width: 768px) {
+    .container-title-chat {
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 3px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+        width: 85%;
+    }
+
+    .h-chat {
+        font-size: 24px;
+        color: #333;
+        display: flex;
+        margin: 0;
+        padding: 5px;
+    }
+}

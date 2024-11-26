@@ -1,0 +1,119 @@
+.search-results-container {
+    max-width: 800px; /* Limitar el ancho del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Color de texto oscuro */
+}
+
+.a{
+    color: #333;
+}
+
+.search-results {
+    list-style: none; /* Eliminar viñetas */
+    padding: 0; /* Eliminar padding */
+}
+
+.search-result-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff; /* Fondo blanco para cada resultado */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s; /* Transición suave para hover */
+}
+
+.search-result-item:hover {
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-date {
+    font-size: 0.9em;
+    color: #888; /* Color gris claro para la fecha */
+}
+
+.search-result-item h3 {
+    font-size: 20px;
+    color: #007bff; /* Color azul para el título */
+    margin: 0 0 10px; /* Espaciado */
+}
+
+.result-excerpt {
+    margin: 10px 0;
+    color: #555; /* Color de texto más claro */
+}
+
+.result-details {
+    margin-top: 15px; /* Espacio superior para separar de la descripción */
+    font-size: 0.95em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #333; /* Color de texto oscuro */
+}
+
+.result-details p {
+    margin: 5px 0; /* Espaciado entre párrafos */
+}
+
+.result-image {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+.result-tags {
+    margin: 10px 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    padding: 5px 10px;
+    border-radius: 3px; /* Bordes redondeados para las etiquetas */
+    margin-right: 5px; /* Espaciado entre etiquetas */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+.read-more {
+    border: none; /* Sin borde */
+    background-color: #3333332c; /* Color de fondo del botón */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
+    margin-bottom: 20px; /* Espacio inferior para separar el botón del pie de página */
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+.read-more:hover {
+    background-color: #aabc21; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    color: #333; /* Color del texto */
+}
+
+.no-results {
+    color: #777; /* Color gris para el mensaje de no resultados */
+    font-style: italic; /* Cursiva para el mensaje */
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.highlight {
+    background-color: #aabc2164; /* O cualquier otro estilo que prefieras */
+    color: #333;
+}

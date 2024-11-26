@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+
+<section class="container-card-register">
+    <div class="img-left">
+        <img src="{% static 'img/about.jpg' %}" alt="Registro" class="register-image">
+    </div>
+    <article class="card-register">
+        <div class="card">
+            <header class="card-header">
+                <h5 class="card-title-register">Registro</h5>
+            </header>
+            <div class="card-body">
+                <!-- Bloque para mostrar mensajes de éxito o error -->
+                {% if messages %}
+                    <div class="alert alert-info">
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                
+                <form method="POST" action="{% url 'register' %}" novalidate>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field|add_class:"form-control" }}
+                            {% if field.errors %}
+                                <div class="alert alert-danger mt-1">
+                                    {{ field.errors|join:", " }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                        <label class="form-check-label" for="terms">Acepto los términos y condiciones</label>
+                    </div>
+                    <div class="container-buttom">
+                         <button type="submit" class="btn-primary">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>
+
+{% endblock %}

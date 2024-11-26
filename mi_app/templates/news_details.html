@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if news %}
+    <div class="grid-container-details-news scroll-fade">
+        {% for news in news %}
+            <div class="news-card-details">
+                <h3 class="news-title-details">{{ news.title }}</h3>
+                {% if news.image %}
+                    <img src="{{ news.image.url }}" alt="" class="news-image-details"> <!-- Imagen -->
+                {% endif %}
+                <p class="article-content">{{ news.content }}
+                    <a href="{% url 'news_details' news.id %}"></a>
+                </p>
+                <small class="article-date">{{ news.created_at }}</small>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No hay noticias disponibles.</p>
+    {% endif %}
+
+    {% include 'slide.html' %}
+{% endblock %}

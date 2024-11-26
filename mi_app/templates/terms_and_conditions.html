@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+<head>
+    <title>Términos y Condiciones - EL BLOG</title>
+    <meta name="description" content="Estos son los términos y condiciones de EL BLOG.">
+    <meta name="description" content="Lee nuestros términos y condiciones para entender mejor el uso de EL BLOG.">
+</head>
+
+{% block content %}
+
+<div class="container-terms-header scroll-fade">
+    <div class="terms-header">
+        <div class="terms-title">{{ terms.title }}</div>
+        <p class="terms-last-updated">Última actualización: {{ terms.last_updated }}</p>
+    </div>
+</div>
+
+<div class="container-conditions scroll-fade">
+    <main>
+        <section>
+            <h2>1. Aceptación de Términos y Condiciones de EL BLOG:</h2>
+            <p>{{ terms.acceptance }}</p>
+        </section>
+
+        <section>
+            <h2>2. Uso del Contenido de EL BLOG:</h2>
+            <p>{{ terms.content_usage }}</p>
+        </section>
+
+        <section>
+            <h2>3. Propiedad Intelectual de EL BLOG:</h2>
+            <p>{{ terms.intellectual_property }}</p>
+        </section>
+
+        <section>
+            <h2>4. Enlaces de Terceros en EL BLOG:</h2>
+            <p>{{ terms.third_party_links }}</p>
+        </section>
+
+        <section>
+            <h2>5. Modificaciones de los Términos y Condiciones de EL BLOG:</h2>
+            <p>{{ terms.modifications }}</p>
+        </section>
+
+        <section>
+            <h2>6. Contacto con EL BLOG:</h2>
+            <p>{{ terms.contact }}</p>
+        </section>
+    </main>
+</div>
+
+<!-- New Section for SLIDE -->
+{% include 'slide.html' %}
+{% endblock %}

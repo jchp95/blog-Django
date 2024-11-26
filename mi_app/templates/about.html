@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<section class="about-intro scroll-fade">
+    <div class="about-content-container">
+        <h2>¿Quiénes somos?</h2>
+        <p>{{ team_description }}</p>
+    </div>
+    <div class="about-image-container">
+        {% if team_image %}
+            <img src="{{ team_image }}" alt="Imagen del Equipo" class="about-image">
+        {% endif %}
+    </div>
+</section>
+
+<section class="about-page scroll-fade">
+    <div class="about-left">
+        <!--<div class="image-card">
+            <img src="{% static 'img/about.jpg' %}" alt="Sobre Nosotros" class="about-image">
+        </div>-->
+    </div>
+    <div class="about-right">
+        <div class="content-container">
+            <h2 class="h-text">¿Qué puedes encontrar aquí?</h2>
+            <ul class="about-right">
+                {% for item in what_you_can_find %}
+                    <li class="li-about">{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="about-details scroll-fade">
+    <div class="about-content-section">
+        <h2 class="h-text">¿Por qué lo hacemos?</h2>
+        <p>{{ why_we_do_it }}</p>
+    </div>
+
+<div class="about-content-valores">
+    <h2 class="h-text-valores">Nuestros Valores Fundamentales</h2>
+    <ul class="u-valores">
+        <li class="l-about" style="color: #003366;">{{ about_content.core_value_1 }}</li> <!-- Integridad -->
+        <li class="l-about" style="color: #668e2d;">{{ about_content.core_value_2 }}</li> <!-- Innovación -->
+        <li class="l-about" style="color: #dc0a26;">{{ about_content.core_value_3 }}</li> <!-- Compromiso -->
+        <li class="l-about" style="color: #5E4B8A;">{{ about_content.core_value_4 }}</li> <!-- Respeto -->
+        <li class="l-about" style="color: #ff8000;">{{ about_content.core_value_5 }}</li> <!-- Excelencia -->
+    </ul>
+</div>
+
+    <div class="about-content-section">
+        <h2 class="h-text">Conócenos mejor</h2>
+        <p class="p-text">Puedes contactarnos a través de:</p>
+        <ul class="u-link">
+            <li class="l-link"><a href="mailto:{{ contact_email }}" class="a-link">{{ contact_email }}</a></li>
+            <li class="l-link"><a href="{{ facebook_url }}" class="a-link" target="_blank">Facebook</a></li>
+            <li class="l-link"><a href="{{ whatsapp_url }}" class="a-link" target="_blank">Whatsapp</a></li>
+        </ul>
+        <p class="p-text">¡Nos encantaría saber de ti!</p>
+    </div>
+</section>
+
+<footer class="about-content-footer scroll-fade">
+    <p class="p-footer">¡Así que prepárate para explorar nuestra colección de artículos y noticias! No dudes en dejarnos tus comentarios o sugerencias, ¡nos encantaría saber de ti!</p>
+    <p class="p-footer">{{ footer_message }}</p>
+    <div class="container-about-logos">
+        <a href="{% url 'home' %}" class="a-logo">
+            <img src="{% static 'logos/logo2.png' %}" alt="Logo" class="logo-about">
+        </a>
+        <a href="{% url 'home' %}" class="a-logo">
+            <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo-about">
+        </a>
+    </div>
+</footer>
+
+{% include 'slide.html' %}
+
+{% endblock %}

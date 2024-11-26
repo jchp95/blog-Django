@@ -1,0 +1,347 @@
+.about-intro {
+    display: flex;
+    background-color: white;
+    text-align: justify;
+    width: 100%;
+    justify-content: space-between;
+    border-left-color: white;
+    margin-bottom: 0;
+}
+
+.about-content-container {
+    width: 100%;
+    margin: 50px;
+}
+
+.about-image-container{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden; /* Oculta el desbordamiento del degradado */
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%); /* Degradado de arriba a abajo */
+}
+
+.about-image {
+    width: 70%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 30px;
+    display: block;
+    max-width: 100%;
+}
+
+
+.about-image:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el mouse */
+}
+
+.about-page {
+    display: flex;
+    margin: 20px;
+    background-color: white;
+    text-align: justify;
+    width: 60%;
+    margin-top: 0;
+}
+
+.about-details{
+    display: flex;
+    background-color: #ffffff;
+    text-align: justify;
+    width: 100%;
+    border-left-color: #ffffff;
+}
+
+.l-about {
+    font-size: 16px;
+    font-weight: 100;
+    margin: 10px;
+    padding: 10px;
+}
+
+.u-link{
+    display: table-caption;
+    
+}
+
+.l-link{
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    list-style-type: none;    
+}
+
+.l-link:hover{
+    color: #aabc21;
+    cursor: pointer;
+    
+}
+
+.p-text{
+    display: flex;
+    justify-content: center;
+}
+
+.a-link {
+    color: #aabc21;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.about-content-footer {
+    display: grid;
+    margin: 20px;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.p-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+    }
+
+
+.li-about {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna si es necesario */
+    background-color: #ffffff; /* Color de fondo blanco */
+    border: none; /* Eliminar borde */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    border-radius: 8px;
+    margin: 10px; /* Aumentar el margen para más separación */
+    padding: 15px; /* Añadir padding para espacio interno */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones más suaves */
+    color: #333;
+
+}
+
+.li-about:hover {
+    transform: translateY(-4px); /* Efecto de elevación más notable al pasar el mouse */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+}
+
+.li-about h2 {
+    font-size: 1.5em; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    color: #333;
+}
+
+.li-about p {
+    font-size: 1em; /* Tamaño de fuente estándar */
+    line-height: 1.6; /* Mejorar la legibilidad con un mayor interlineado */
+    color: #333; /* Color de texto más oscuro para mejor contraste */
+}
+
+.about-content-section {
+    display: grid;
+    margin: 20px; /* Aumentar margen para más separación */
+    justify-content: center;
+    background-color: #f9f9f9; /* Color de fondo suave */
+    border: none; /* Eliminar borde */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 20px; /* Aumentar padding para más espacio interno */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones más suaves */
+    width: 30%;
+}
+
+.about-content-section:hover {
+    transform: translateY(-4px); /* Efecto de elevación más notable al pasar el mouse */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+    background-color: #ffffff; /* Cambiar a blanco al pasar el mouse */
+}
+
+.about-content-valores{
+    display: grid;
+    margin: 20px; /* Aumentar margen para más separación */
+    justify-content: center;
+    background-color: #f9f9f9; /* Color de fondo suave */
+    border: none; /* Eliminar borde */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 20px; /* Aumentar padding para más espacio interno */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones más suaves */
+    width: 30%;
+}
+
+.about-content-valores:hover {
+    transform: translateY(-4px); /* Efecto de elevación más notable al pasar el mouse */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+    background-color: #ffffff; /* Cambiar a blanco al pasar el mouse */
+}
+
+.u-valores {
+    display: grid;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0; /* Eliminar el padding predeterminado de la lista */
+}
+
+.h-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Tipografía moderna */
+    color: #333; /* Color de texto oscuro */
+}
+
+.h-text-valores {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Tipografía moderna */
+    color: #333; /* Color de texto oscuro */
+}
+
+.h-text h2 {
+    font-size: 1.8em; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.h-text p {
+    font-size: 1em; /* Tamaño de fuente estándar */
+    line-height: 1.6; /* Mejorar la legibilidad */
+    color: #555; /* Color de texto más suave */
+}
+
+.container-about-logos {
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-about{
+    width: 200px;
+}
+
+
+
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+
+    .about-content-container {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .about-image-container{
+        display: flex;
+      justify-content: center;
+      margin: 10px;
+    }
+
+    .about-image {
+        width: 100%;
+      
+    }
+
+    .about-intro {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar elementos */
+    }
+
+    .about-page {
+        border-left-color: white;
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        margin: 0;
+    }
+
+    .about-right{
+        display: block;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .about-content-section {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-content-valores {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .li-about {
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+
+    .h-text h2 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .h-text p {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .about-details{
+        display: contents;
+    }
+
+    .u-about{
+        display: table-caption;
+        margin: auto;
+    }
+
+    .l-about {
+        font-size: 16px;
+        font-weight: 100;
+        margin: 10px;
+        width: 100px;
+        padding: 10px;
+    }
+
+    .l-link {
+        display: table-caption;
+        font-size: 20px;
+    }
+
+    .l-link a{
+        display: table-caption;
+        font-size: 20px;
+        color: #aabc21;
+    }
+
+
+    .about-content-footer {
+        display: grid;
+       
+    }
+
+    .container-about-logos {
+        margin: 10px;
+    }
+ /* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+}

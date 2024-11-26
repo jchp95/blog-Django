@@ -1,0 +1,43 @@
+{% load static %}
+<div class="Container-carousel scroll-fade">
+  <a href="{% url 'services' %}" class="title-carousel">Otros Servicios >>></a>
+  <h6 class="h-subtitle">Descubre los diferentes servicios que ofrecemos</h6>
+</div>
+<div class="carousel">
+  <div id="carouselServicios" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for item in carousel_items %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="5000">
+        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.title }}">
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicios" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselServicios" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.scroll-fade');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Dejar de observar el elemento una vez que es visible
+            }
+        });
+    });
+
+    elements.forEach(element => {
+        observer.observe(element); // Comenzar a observar cada elemento
+    });
+});
+</script>

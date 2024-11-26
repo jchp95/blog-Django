@@ -1,0 +1,97 @@
+.container-slide-section {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    padding: 20px; /* Agrega un poco de padding alrededor del contenedor */
+}
+
+.slide-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 300px; /* Aumenta la altura para más espacio */
+}
+
+.slide-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-slide {
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra más suave y difusa */
+    border-radius: 10px;
+    overflow: hidden; 
+    box-sizing: border-box; 
+    margin: 0 10px; /* Espaciado entre tarjetas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suave transición al escalar y cambiar sombra */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+}
+.card-slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al hacer hover */
+}
+
+.card-image-slide {
+    width: 100%;
+    height: 200px; /* Establece una altura fija para las imágenes */
+    object-fit: cover; /* Recorta la imagen si es necesario */
+}
+
+.card-content-slide {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para mayor contraste */
+    border-radius: 5px; 
+    color: white; /* Color del texto */
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+}
+
+.card-title-slide {
+    margin: 0;
+    font-size: 20px; 
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold; /* Cambia el peso de la fuente para destacar el título */
+}
+
+.card-description-slide {
+    margin-top: 5px;
+    font-size: 14px; 
+}
+
+.link-card-slide {
+    font-size: 10px; 
+    margin-top: 5px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Espaciado interno */
+    cursor: pointer;
+    z-index: 10; 
+    border-radius: 5px; /* Bordes redondeados para los botones */
+    transition: background-color 0.3s; /* Suave transición para el hover */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Cambia el color al pasar el ratón */
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+

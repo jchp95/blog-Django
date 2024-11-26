@@ -1,0 +1,7 @@
+{{ object.title }}
+{{ object.acceptance }}
+{{ object.content_usage }}
+{{ object.intellectual_property }}
+{{ object.third_party_links }}
+{{ object.modifications }}
+{{ object.contact }}

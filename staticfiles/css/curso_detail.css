@@ -1,0 +1,93 @@
+.curso-detail {
+    background: white;
+    padding: 30px; /* Aumentar padding para más espacio */
+    border-radius: 10px; /* Cambiar el radio de borde para un efecto más suave */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    max-width: 96%; /* Limitar el ancho máximo para un diseño más centrado */
+    margin: 20px auto; /* Centrar el contenedor */
+}
+
+.h-curso-detail {
+    color: #333;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.p-curso-detail{
+    text-align: justify ;
+}
+
+.h-title-capitulos {
+    color: #333;
+    margin-top: 20px;
+}
+
+.capitulo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.capitulo-title {
+    cursor: pointer;
+    color: #333; /* Color más oscuro para mejor contraste */
+    transition: color 0.3s, text-shadow 0.3s, background-color 0.3s; /* Añadir transiciones para otros efectos */
+    font-size: 16px; /* Tamaño de fuente ligeramente más grande */
+    padding: 5px; /* Espaciado interno para un mejor clic */
+    border-radius: 4px; /* Bordes redondeados para un efecto más suave */
+}
+
+.capitulo-title:hover {
+    color: #aabc21; /* Color al pasar el mouse */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra de texto para profundidad */
+    background-color: rgba(170, 188, 33, 0.1); /* Fondo sutil al pasar el mouse */
+}
+.video-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Los capítulos están uno debajo del otro */
+}
+
+.video-card-container {
+    display: ruby;
+    margin: 20px;
+}
+
+.video-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Ajuste del padding para hacer la tarjeta más pequeña */
+    flex: 1 1 calc(30% - 15px); /* Ajustado para que tres cards quepan por fila */
+    transition: transform 0.3s;
+    width: 30%;
+    margin: 20px;
+}
+
+.video-card h4 {
+    font-size: 14px; /* Tamaño de fuente ajustado para que se vea mejor en tarjetas más pequeñas */
+    margin: 5px 0; /* Ajuste del margen */
+    overflow: hidden; /* Oculta el desbordamiento */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos al final si el texto es demasiado largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.video-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}

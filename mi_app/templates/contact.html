@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="contact-container scroll-fade">
+    {% for contact in contact %}
+        <div class="contact-card">
+            <h3>{{ forloop.counter }}. {{ contact.title }}</h3>
+            <p>{{ contact.description }}</p>
+        </div>
+    {% endfor %}
+
+    <!-- Imagen añadida aquí -->
+    <div class="contact-image">
+        <div class="title-ubication">
+            <h3 class="title-h3">3. Ubicación</h3>
+            <img src="{% static 'img/carousel4.jpg' %}" alt="Descripción de la imagen" class="img-ubicacion">
+        </div>
+    </div>
+
+    <div class="contact-method">
+        <h2>💬 Formulario de Contacto</h2>
+        <p>Si lo prefieres, también puedes completar nuestro formulario de contacto a continuación. Cuéntanos de qué se trata y te responderemos pronto:</p>
+        
+        <!-- Contenedor para el mensaje de éxito -->
+        <div id="success-message" style="display: none; color: green;">
+            {{ success_message }}
+        </div>
+        
+        <form id="myForm" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Esto renderiza el formulario automáticamente -->
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>        
+
+<!-- Nueva sección para SLIDE -->
+{% include 'slide.html' %}
+
+{% endblock %}

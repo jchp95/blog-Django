@@ -1,0 +1,83 @@
+.tipo-curso {
+    background-color: #f5f5f5; /* Color de fondo suave */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+.tipo-curso h1 {
+    font-family: 'Arial', sans-serif; /* Fuente moderna */
+    font-size: 24px; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    margin: 0; /* Eliminar margen por defecto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    text-transform: uppercase; /* Transformar texto a mayúsculas */
+}
+
+.cursos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-bottom: 20px;
+}
+
+.curso-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Ancho fijo para las tarjetas */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.curso-video-container {
+    width: 100%;
+    height: 200px; /* Altura fija para el video */
+    overflow: hidden;
+}
+
+.curso-video {
+    width: 100%; /* Video ocupa todo el ancho de la tarjeta */
+    height: 100%; /* Video ocupa toda la altura del contenedor */
+    object-fit: cover; /* Mantiene la proporción del video */
+}
+
+.curso-info {
+    padding: 15px;
+}
+
+.curso-title {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+.curso-description {
+    font-size: 1em;
+    color: #333333a0;
+    margin: 5px 0;
+}
+
+.curso-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 15px;
+}
+
+.curso-link:hover {
+    -webkit-text-fill-color: #aabc21;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}

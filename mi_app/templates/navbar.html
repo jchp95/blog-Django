@@ -1,0 +1,52 @@
+{% load static %}
+
+<body>
+    <div class="general-navbar">
+        <div class="navbar-logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        {% include 'search.html' %}
+
+        <nav class="navbar">
+            <div class="navbar-toggle" id="mobile-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="navbar-list" id="navbar-list">
+                <li class="navbar-link"><a href="{% url 'home' %}">Home</a></li>
+                <li class="navbar-link"><a href="{% url 'about' %}">Nosotros</a></li>
+                <li class="navbar-link"><a href="{% url 'services' %}">Servicios</a></li>
+                <li class="navbar-link"><a href="{% url 'contact' %}">Contacto</a></li>
+                <li class="navbar-link"><a href="{% url 'lista_cursos' %}">Cursos</a></li>
+            </ul>
+        </nav>       
+    </div>
+
+    
+
+
+    
+    <script>
+        const toggleButton = document.getElementById('mobile-menu');
+        const navbarList = document.getElementById('navbar-list');
+
+        toggleButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Evita que el clic en el botón cierre el menú
+            navbarList.classList.toggle('active'); // Activa o desactiva el menú
+            toggleButton.classList.toggle('active'); // Cambia el estado del botón
+        });
+
+        // Cierra el menú si se hace clic fuera de él
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = navbarList.contains(event.target) || toggleButton.contains(event.target);
+            if (!isClickInsideMenu) {
+                navbarList.classList.remove('active'); // Oculta el menú
+                toggleButton.classList.remove('active'); // Cambia el estado del botón
+            }
+        });
+    </script>
+</body>

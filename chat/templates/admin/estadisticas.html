@@ -1,0 +1,22 @@
+<!-- templates/admin/estadisticas.html -->
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Estadísticas de Preguntas</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Palabra</th>
+            <th>Frecuencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for palabra, frecuencia in frecuencias %}
+        <tr>
+            <td>{{ palabra }}</td>
+            <td>{{ frecuencia }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

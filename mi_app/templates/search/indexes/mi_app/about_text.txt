@@ -1,0 +1,3 @@
+{{ object.team_description }}
+{{ object.why_we_do_it }}
+{{ object.core_values }}

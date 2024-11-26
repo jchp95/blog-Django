@@ -1,0 +1,29 @@
+<!-- services.html -->
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="faq-container">
+        <h2 class="h-faq">Preguntas Frecuentes</h2>
+        {% if faqs %}
+            {% for faq in faqs %}
+                <div class="faq-item">
+                    <h3 class="faq-question" onclick="toggleAnswer(this)">{{ faq.question }}</h3>
+                    <p class="faq-answer" style="display: none;">{{ faq.answer }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay preguntas frecuentes disponibles en este momento.</p>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const answerElement = questionElement.nextElementSibling;
+            if (answerElement.style.display === "none" || answerElement.style.display === "") {
+                answerElement.style.display = "block";
+            } else {
+                answerElement.style.display = "none";
+            }
+        }
+    </script>
+{% endblock %}

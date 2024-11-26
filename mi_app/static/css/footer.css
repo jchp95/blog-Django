@@ -1,0 +1,138 @@
+
+/* ESTILOS DEL FOOTER */
+.footer {
+    background: linear-gradient(270deg, #623fef, #feb47b, #a28cfc);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* Inicio de la animación */
+    }
+
+    50% {
+        background-position: 100% 50%;
+        /* Mitad de la animación */
+    }
+
+    100% {
+        background-position: 0% 50%;
+        /* Fin de la animación */
+    }
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+}
+
+.footer-link {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+    margin-right: 80px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+.footer-link:hover {
+    text-decoration: none;
+    color: #aabc21;
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+}
+
+.footer-text {
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Estilos de los iconos redes sociales */
+.social-icon {
+    font-size: 50px;
+    color: #333;
+    margin: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+.social-icon:hover {
+    color: #aabc21;
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+}
+
+
+
+/* Estilos Responsivos para Dispositivos Móviles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Cambia a columna en dispositivos móviles */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Cambia a columna para los enlaces */
+        align-items: center; /* Centrar los enlaces */
+        margin-bottom: 15px; /* Espacio entre enlaces y otros elementos */
+    }
+
+    .footer-link {
+        margin-right: 0; /* Elimina el margen derecho */
+        margin-bottom: 10px; /* Espacio entre los enlaces */
+        font-size: 20px; /* Reduce el tamaño de la fuente */
+    }
+
+    .social-links {
+        flex-direction: row; /* Mantener en fila, pero se puede cambiar a columna si se desea */
+        justify-content: center; /* Centrar los iconos sociales */
+    }
+
+    .social-icon {
+        margin: 15px; /* Reduce el margen para iconos sociales */
+        font-size: 40px; /* Reduce el tamaño del icono */
+    }
+
+    .footer-text {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+    /* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+}

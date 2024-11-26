@@ -1,0 +1,19 @@
+<!-- services.html -->
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="services-container scroll-fade">
+    {% for services in services %}
+        <div class="service-card">
+            <h3>{{ forloop.counter }}. {{ services.name }}</h3>
+            <p>{{ services.description }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+    <!-- New Section for SLIDE -->
+{% include 'slide.html' %}
+
+
+
+{% endblock %}

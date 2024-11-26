@@ -1,0 +1,13 @@
+/* Estilo para el scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Ancho del scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255); /* Color de fondo del track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px; /* Bordes redondeados para el thumb */
+  }

@@ -1,0 +1,136 @@
+.general-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #ffffff;
+}
+
+.navbar-logo .logo {
+    height: 100px; /* Altura del logo */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Sombra para imágenes SVG */
+    transition: transform 0.3s; /* Transición suave para el efecto hover */
+}
+
+.navbar-logo .logo:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el mouse */
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.7)); /* Aumenta la sombra al pasar el mouse */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-link a{
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 100;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.navbar-link a:hover {
+    color: #aabc21;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.icon {
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+}
+
+.bar {
+    height: 3px;
+    width: 20px;
+    background-color: #aabc21; /* Color de las barras del botón de hamburguesa */
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .general-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #ffffff;
+    }
+    .navbar-list {
+        display: none; /* Inicialmente oculto */
+    }
+
+    .navbar-logo .logo {
+        height: 100px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        transition: transform 0.3s;
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        height: auto;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+
+   /* Muestra el menú cuando tiene la clase 'active' */
+.navbar-list.active {
+    display: flex; /* O display: block; dependiendo de tu diseño */
+    flex-direction: column; /* Coloca los enlaces en columna */
+    position: fixed; /* Cambiado a fixed para cubrir toda la pantalla */
+    top: 0; /* Distancia desde la parte superior */
+    right: 0; /* Alineado al borde derecho */
+    z-index: 1001; /* Asegúrate de que esté por encima de otros elementos */
+    width: 100%; /* Ancho completo de la pantalla */
+    height: 100%; /* Altura completa de la pantalla */
+    padding: 20px; /* Espaciado vertical */
+    background-color: #333; /* Fondo del menú en móvil */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones */
+    max-height: 400px; /* Altura máxima cuando está activo */
+    opacity: 1; /* Totalmente visible */
+}
+
+    .navbar-toggle {
+        display: flex; /* Muestra el botón de hamburguesa */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        z-index: 9999;
+    }
+
+    .navbar-link a {
+        color: #aabc21;
+        text-decoration: none;
+        padding: 15px;
+        font-weight: 100;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-list.active {
+        display: grid;
+        max-height: 400px;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+ }
+
+    /* Estilo para el botón de hamburguesa */
+    .navbar-toggle .icon {
+        width: 30px; /* Ancho de las líneas del icono */
+        height: 3px; /* Grosor de las líneas del icono */
+        background-color: #aabc21; /* Color de las líneas, igual que la X */
+        margin: 5px 0; /* Espaciado entre las líneas */
+        transition: all 0.3s; /* Transiciones para el icono */
+    }
+
+}

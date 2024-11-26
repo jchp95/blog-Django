@@ -1,0 +1,48 @@
+/* Estilos generales */
+
+.container-terms-header {
+    display: flex;
+    margin: 20px; /* Centrar el contenedor */
+    justify-content: center;
+}
+
+/* Estilo del título */
+.terms-title {
+    font-weight: 500;
+    font-size: 40px; /* Tamaño de fuente grande */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del título */
+}
+
+/* Estilo de la última actualización */
+.terms-last-updated {
+    text-align: center; /* Centrar el texto */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    color: #333; /* Color gris para el texto secundario */
+}
+
+.container-conditions{
+    margin: 20px;
+    justify-content: center;    
+}
+
+/* Estilo de los encabezados de sección */
+h2 {
+    font-size: 1.5em; /* Tamaño de fuente para encabezados */
+    margin-bottom: 10px; /* Espacio debajo del encabezado */
+    color: #333; /* Color oscuro */
+    font-weight: 500;
+}
+
+/* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}

@@ -1,0 +1,75 @@
+
+.container-lista-cursos {
+    max-width: 800px; /* Limitar el ancho del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+    background-color: white; /* Fondo blanco para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.h-lista-cursos {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.curso-list {
+    margin: 0;
+    padding: 0;
+}
+
+.curso-item {
+    margin-bottom: 15px; /* Espacio entre cursos */
+}
+
+.subtitle-lista-cursos {
+    cursor: pointer;
+    background-color: #333333bd;
+    color: white;
+    padding: 15px; /* Aumentar el padding para un mejor toque */
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añadir transformación */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el título */
+}
+
+.subtitle-lista-cursos:hover {
+    background-color: #aabc21;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+.u-lista-cursos {
+    list-style-type: none;
+    padding: 0;
+}
+
+.l-lista-cursos {
+    padding: 10px; /* Aumentar el padding para los capítulos */
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.l-lista-cursos:last-child {
+    border-bottom: none;
+}
+
+.l-lista-cursos:hover {
+    background-color: #f1f1f1;
+}
+
+.container-link-lista-cursos{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.link-lista-cursos{
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añadir transformación */
+}
+
+.link-lista-cursos:hover{
+    color: #aabc21;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}

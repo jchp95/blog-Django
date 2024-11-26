@@ -1,0 +1,103 @@
+
+/*ESTILOS DEL BUSCADOR*/
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+    padding: 5px; /* Añadir un poco de padding para mejorar el diseño */
+    max-width: 100%; /* Asegúrate de que ocupe el ancho completo en móviles */
+    margin: 0 auto; /* Centrar la barra de búsqueda */
+}
+
+.search-container:focus-within {
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
+}
+
+.search-input {
+    border: none;
+    padding: 30px 20px;
+    font-size: 16px;
+    outline: none;
+    width: 500px;
+    transition: border 0.3s ease;
+    border-radius: 50px;
+}
+
+.search-input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+.search-input::focus {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+.search-icono {
+    background-color: #ffffff00; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-icono:hover {
+    background-color: #ffffff00; /* Color de fondo al pasar el ratón */
+}
+
+.search-icono:active {
+    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+    background-color: violet;
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        width: 60%;
+        margin: 0;
+        display: flex;
+        z-index: 1000;
+        position: absolute;
+        margin-right: 10px;
+        max-height: 50px;
+        padding: 5px;
+        background-color: #ffffff36;
+        right: 50px;
+    }
+
+    .search-input {
+        border: none;
+        padding: 5px;
+        font-size: 16px;
+        outline: none;
+        width: 200px;
+        transition: border 0.3s ease;
+        margin-right: 35px;
+    }
+
+    .search-button {
+        background-color: #ffffff00;
+        position: absolute;
+        right: 8px;
+        border-radius: 50px;
+        width: 30px;
+        padding: 0;
+        top: 8px;
+    }
+
+
+    .search-container:focus-within {
+        box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
+        background-color: #ffffff93;
+    }
+
+    .search-button:hover {
+        background-color: #ffffff00; /* Color de fondo al pasar el ratón */
+    }
+}

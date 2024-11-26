@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% if articles %}
+<div class="grid-container-details scroll-fade">
+    {% for article in articles %}
+    <div class="article-card-details">
+        <h3 class="article-title-details">{{ article.title }}</h3>
+        <p class="article-content">{{ article.content }}
+            <a href="{% url 'articles_details' article.id %}"></a>
+        </p>
+        <small class="article-date">{{ article.created_at }}</small>
+        <div class="fb-share-button" data-href="https://elblog.onrender.com" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Felblog.onrender.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No hay artículos disponibles.</p>
+{% endif %}
+
+{% include 'slide.html' %}
+{% endblock %}

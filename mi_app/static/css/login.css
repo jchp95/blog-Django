@@ -1,0 +1,155 @@
+/* Estilos generales para el contenedor del formulario */
+.container-register-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 40px;
+}
+
+/* Estilo de la tarjeta de inicio de sesión */
+.container-card-register-login {
+    background-color: white; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 40px; /* Espaciado interno */
+    width: 400px; /* Ancho fijo para la tarjeta */
+}
+
+/* Títulos */
+.card-title {
+    font-size: 28px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centrar el título */
+}
+
+/* Estilos de los grupos de formulario */
+.form-group-login {
+    margin-bottom: 20px; /* Espacio inferior entre grupos */
+}
+
+/* Estilos de las etiquetas */
+.form-group-login label {
+    font-weight: 500; /* Peso de fuente más ligero para las etiquetas */
+    margin-bottom: 5px; /* Espacio inferior para separar la etiqueta del campo */
+    display: block; /* Asegura que las etiquetas ocupen toda la línea */
+}
+
+/* Estilos de los campos de entrada */
+.form-control {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Estilo del placeholder */
+.form-control::placeholder {
+    color: #a0a0a0; /* Color del placeholder */
+}
+
+/* Estilo al enfocar el campo de entrada */
+.form-control:focus {
+    border-color: #007bff; /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+    outline: none; /* Eliminar el contorno predeterminado */
+}
+
+/* Estilo del mensaje de error */
+.error-message {
+    color: red; /* Color rojo para el mensaje de error */
+    text-align: center; /* Cent rar el mensaje de error */
+    margin-bottom: 20px; /* Espacio inferior para separar el mensaje de error del botón */
+}
+
+.container-buttom{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo del botón de inicio de sesión */
+.btn-primary {
+    border: none; /* Sin borde */
+    background-color: #3333332c; /* Color de fondo del botón */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
+    margin: 10px; /* Espacio inferior para separar el botón del pie de página */
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+/* Estilo al pasar el mouse sobre el botón */
+.btn-primary:hover {
+    background-color: #aabc21; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    color: #333; /* Color del texto */
+}
+
+.btn-primary-register{
+    border: none; /* Sin borde */
+    background-color: #3333332c; /* Color de fondo del botón */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
+    margin: 10px; /* Espacio inferior para separar el botón del pie de página */
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+}
+
+.btn-primary-register:hover {
+    background-color: #aabc21; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    color: #000000; /* Color del texto */
+}
+
+.forgot-password{
+    display: flex;
+    justify-content: center;
+}
+
+.a-login {
+    color: #333;
+    transition: color 0.3s ease; /* Agrega una transición suave de 0.3 segundos */
+    font-size: 14px;
+    margin: 10px;
+}
+
+.a-login:hover{
+    color: #aabc21;
+}
+
+/* Estilo del botón de Google */
+.google-login {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.btn-google {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4285F4; /* Color de fondo de Google */
+    color: white; /* Color del ícono */
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-google i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.fa-google:before {
+    content: "\f1a0";
+    display: flex;
+    margin-left: 6px;
+}

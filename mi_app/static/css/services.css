@@ -1,0 +1,60 @@
+
+/* Contenedor de servicios */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Tarjetas de servicio */
+.service-card {
+    background-color: #ffffff7f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    flex: 1 1 calc(30% - 40px); /* Ajusta el ancho según el tamaño de la pantalla */
+    transition: transform 0.3s;
+}
+
+/* Efecto de hover en las tarjetas */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos */
+.service-card h3 {
+    color: #191919;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Descripciones */
+.service-card p {
+    color: #191919;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-card {
+        flex: 1 1 calc(45% - 40px); /* Dos columnas en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        flex: 1 1 100%; /* Una columna en pantallas muy pequeñas */
+    }
+    /* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+}

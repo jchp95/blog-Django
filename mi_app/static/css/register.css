@@ -1,0 +1,150 @@
+
+.container-card-register {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: stretch; /* Alinea los elementos para que tengan la misma altura */
+    padding: 20px; /* Espaciado alrededor del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    max-width: 1200px; /* Limita el ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor en la página */
+}
+
+.img-left {
+    flex: 1; /* Permite que la imagen ocupe espacio */
+    max-width: 500px; /* Limita el ancho máximo de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la tarjeta */
+    border-radius: 8px 0 0 8px; /* Bordes redondeados para la imagen */
+}
+
+.register-image {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px 0 0 8px; /* Bordes redondeados para la imagen */
+}
+
+.card-register {
+    flex: 1; /* Permite que la tarjeta ocupe el mismo espacio que la imagen */
+    width: 100%; /* Permite que la tarjeta ocupe todo el ancho disponible */
+    max-width: 500px; /* Limita el ancho máximo de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la tarjeta */
+    border-radius: 0 8px 8px 0; /* Bordes redondeados */
+}
+
+.card{
+    border-radius: 0 8px 8px 0; /* Bordes redondeados */
+}
+
+.card-header:first-child {
+    border-radius: 0 8px 0 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #aabc21;
+   
+}
+
+.card-title-register{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.card-body {
+    padding: 0; /* Espaciado interno */
+}
+
+.form-group {
+    margin: 15px; /* Espacio entre los grupos de formulario */
+    font-size: 14px;
+}
+
+.form-check {
+    display: flex; /* Flexbox para la alineación */
+    align-items: center; /* Centra verticalmente */
+}
+
+.form-check-input {
+    margin-right: 10px; /* Espacio a la derecha del checkbox */
+}
+
+.form-control {
+    width: 100%; /* Ancho completo para los campos de entrada */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición para el cambio de color del borde */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Cambia el color del borde al enfocarse */
+    outline: none; /* Elimina el contorno por defecto */
+}
+
+.btn-primary {
+    border: none;
+    background-color: #3333332c;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-bottom: 20px;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #aabc21; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    color: #333; /* Color del texto */
+}
+
+
+/* Estilo del botón de Google */
+.btn-google {
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    color: #333; /* Color de texto */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.btn-google:hover {
+    background-color: #f0f0f0; /* Fondo más claro al pasar el mouse */
+}
+
+.btn-google i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+
+@media (max-width: 768px) {
+    .container-card-register {
+        display: grid;
+    }
+
+    .card-header:first-child {
+        border-radius: 8px 8px 0 0;
+    }
+    .register-image {
+        display: flex;
+        border-radius: 8px;
+    }
+
+    .img-left {
+        max-width: 100%; /* Aumenta el ancho de la imagen en móviles */
+        border-radius: 8px;
+    }
+
+    .card-register {
+        width: 100%; /* Mant iene el ancho del formulario en móviles */
+        margin-top: 20px;
+        border-radius: 8px; /* Bordes redondeados */
+    }
+    .card{
+        border-radius: 8px; /* Bordes redondeados */
+    }
+}

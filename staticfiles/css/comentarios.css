@@ -1,0 +1,127 @@
+/* comentarios.css */
+
+/* Estilos para la sección de comentarios */
+.comments-section {
+    max-width: 100%; /* max-w-2xl */
+    margin: auto; /* mx-auto */
+    padding: 2rem; /* p-8 */
+    background-color: rgba(255, 255, 255, 0.9); /* bg-white */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* sombra más suave */
+    transition: box-shadow 0.3s ease; /* Transición suave para sombra */
+}
+
+.comments-section:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Sombra al pasar el mouse */
+}
+
+.comments-section h2 {
+    font-size: 2rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem; /* mb-6 */
+    color: #2a2a2a; /* Color más oscuro para el título */
+}
+
+.comments-section p {
+    color: #555; /* text-gray-700 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.comments-section a {
+    color: #333; /* text-blue-500 */
+    transition: color 0.3s ease; /* Transición suave para el color */
+    font-weight: bold;
+}
+
+.comments-section a:hover {
+    text-decoration: none; /* hover:underline */
+    color: #aabc21; /* text-blue-600 */
+}
+
+.comments-section form {
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.comments-section textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    outline: none;
+    background-color: rgba(240, 240, 240, 0.8);
+    transition: border-color 0.3s ease;
+    margin: 10px;
+}
+
+.comments-section textarea:focus {
+    border-color: #3B82F6; /* Cambia el color del borde al enfocar */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Efecto similar a ring */
+}
+
+.comments-section button {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem; /* Aumentar el padding */
+    background-color: #00000019; /* Fondo azul */
+    color: #333; /* Texto blanco */
+    font-weight: 600;
+    border: none;
+    border-radius: 50px; /* rounded-md */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.comments-section button:hover {
+    background-color: #aabc21; /* Fondo azul más oscuro */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.comments-section h3 {
+    font-size: 1.5rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: #2a2a2a; /* Color más oscuro para subtítulos */
+}
+
+.comments-section ul {
+    margin: 0; /* reset margin */
+    padding: 0; /* reset padding */
+}
+
+.comments-section li {
+    padding: 1rem; /* p-4 */
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo más suave */
+    border-radius: 0.5rem; /* rounded-md */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra más suave */
+    margin-bottom: 1rem; /* space-y-4 */
+    transition: transform 0.3s ease; /* Transición suave para movimiento */
+}
+
+.comments-section li:hover {
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+.comments-section strong {
+    color: #333;
+    font-size: 12px;
+}
+
+.comments-section span {
+    color: #333; 
+     }
+
+.comments-section em {
+    display: block; /* block */
+    color: #6B7280; /* text-gray-500 */
+    font-size: 14px; /* text-sm */
+}
+
+/* Estilos para el efecto de aparición al hacer scroll */
+.scroll-fade {
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.scroll-fade.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}

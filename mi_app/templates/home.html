@@ -1,0 +1,100 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% for message in messages %}
+<div class="container-alert">
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+</div>
+{% endfor %}
+
+<!-- Nuevo contenedor para la imagen del banner cargada desde el administrador -->
+<div class="banner-image-container">
+    {% if banner_home %}
+    <div class="banner-gradient">
+        <img src="{{ banner_home.image.url }}" alt="Banner Principal" class="banner-home-image">
+    </div>
+    {% else %}
+    <p>No hay imagen disponible.</p>
+    {% endif %}
+</div>
+
+<div class="container-pro">
+    <div class="articles-container scroll-fade">
+        <a class="title">Artículos Recientes</a>
+        {% if articles %}
+        <div class="grid-container">
+            {% for article in articles %}
+            <div class="article-card">
+                <h3 class="article-title">{{ article.title }}</h3>
+                <p class="article-content">{{ article.content|truncatewords:50 }}
+                    <a href="{% url 'articles_details' article.id %}" class="article-link">Leer más</a>
+
+                </p>
+                <small class="article-date">{{ article.created_at }}</small>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No hay artículos disponibles.</p>
+        {% endif %}
+    </div>
+    <div class="news-container scroll-fade">
+        <a class="title-news">Noticias Recientes</a>
+        {% if news %}
+        <div class="grid-container">
+            {% for news in news %}
+            <div class="news-card">
+                <h3 class="news-title">{{ news.title }}</h3>
+                {% if news.image %}
+                <img src="{{ news.image.url }}" alt="" class="news-image"> <!-- Imagen -->
+                {% endif %}
+                <p class="news-content">{{ news.content|truncatewords:30 }}
+                    <a href="{% url 'news_details' news.id %}" class="article-link">Leer más</a>
+                </p>
+                <small class="news-date">{{ news.created_at }}</small>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No hay noticias disponibles.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% include 'carousel.html' %}
+
+
+{% include 'carousel_cursos.html' %}
+<!-- Nueva sección para SLIDE -->
+{% include 'slide.html' %}
+
+
+{% include 'comentarios.html' %}
+
+
+{% include 'suscriptores.html' %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Selecciona todos los mensajes de alerta
+        var alertMessages = document.querySelectorAll(".alert");
+        alertMessages.forEach(function (alertMessage) {
+            // Agrega la clase 'show' para iniciar la transición de aparición
+            alertMessage.classList.add('show');
+
+            // Espera 3 segundos (3000 milisegundos) y luego oculta el mensaje
+            setTimeout(function () {
+                alertMessage.classList.add('hide'); // Agrega la clase 'hide'
+                // Eliminar el mensaje del DOM después de la transición
+                setTimeout(function () {
+                    alertMessage.style.display = 'none';
+                }, 600); // Tiempo de espera igual al de la transición
+            }, 3000);
+        });
+    });
+</script>
+
+{% endblock %}
