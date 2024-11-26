@@ -125,7 +125,7 @@
 
 /* Media Queries para ajustar el tamaño del texto en pantallas más pequeñas */
 @media (max-width: 768px) {
-    .card-title-visitas, .card-title-s uscriptores, .card-title-calificación {
+    .card-title-visitas, .card-title-suscriptores, .card-title-calificación {
         font-size: 16px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
     }
 
