@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import handler404, handler500
 
+
 handler404 = 'mi_app.views.custom_404_view'
 handler500 = 'mi_app.views.custom_500_view'
 
@@ -54,8 +55,8 @@ urlpatterns = [
     path('password_reset/done/', CustomPasswordResetDoneView.as_view(), name='password_reset_done'),  # Hecho de restablecimiento
     path('reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),  # Confirmar restablecimiento
     path('reset/done/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),  # Completado
-
-    path('oauth/', include('social_django.urls', namespace='social')), 
+    
+    path('accounts/', include('allauth.urls')),
 
     path('submit_comment/', submit_comment, name='submit_comment'),  # Enviar comentario
     path('like_comment/<int:comment_id>/', like_comment, name='like_comment'),  # Dar like a un comentario

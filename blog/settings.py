@@ -35,8 +35,6 @@ DEBUG = os.environ.get("DEBUG", "FALSE").lower() == "true"
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,16 +44,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+
     'mi_app',
     'chat',
     'cursos',
     'corsheaders',
     'haystack',
-    'social_django',
     'rest_framework',
-    'django_filters',
-    
+    'django_filters', 
 ]
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -66,7 +71,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 # Configura los orígenes permitidos
@@ -81,8 +88,6 @@ HAYSTACK_CONNECTIONS = {
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),  # Asegúrate de que este directorio exista
     },
 }
-
-
 
 ROOT_URLCONF = 'blog.urls'
 
@@ -156,32 +161,37 @@ STATIC_URL = '/static/'  # URL para acceder a los archivos estáticos
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Ruta donde se recogerán los archivos estáticos
 # Directorios adicionales donde Django buscará archivos estáticos
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mi_app', 'static'),  # Ajusta esto según la estructura de tu proyecto
-    os.path.join(BASE_DIR, 'chat', 'static'), 
-    os.path.join(BASE_DIR, 'cursos', 'static'), 
+       os.path.join(BASE_DIR, 'chat', 'static'), 
+       os.path.join(BASE_DIR, 'cursos', 'static'), 
 ]
 
+LOGOUT_REDIRECT_URL = 'home'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PWCE_ENABLED': True,
+    }
+}
+
+LOGIN_REDIRECT_URL = 'home'  
+LOGOUT_REDIRECT_URL = 'home' 
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
-# Configuración de autenticación social
-AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',  # Backend de Google
-    'django.contrib.auth.backends.ModelBackend',  # Backend de Django
-)
-
-# Configura tus credenciales de Google
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')  # Reemplaza con tu Client ID de Google
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')  # Reemplaza con tu Client Secret de Google
-
-# Opcional: redirigir después de iniciar sesión
-LOGIN_REDIRECT_URL = 'home'  # Cambia esto a la URL a la que deseas redirigir después del inicio de sesión
-LOGOUT_REDIRECT_URL = 'home'  # Cambia esto a la URL a la que deseas redirigir después del cierre de sesión
-
-# Agrega la URL de la vista de inicio de sesión social
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

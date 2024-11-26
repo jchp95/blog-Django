@@ -1,4 +1,6 @@
 {% extends 'index.html' %}
+{% load socialaccount%}
+
 {% load static %}
 
 {% block content %}
@@ -41,7 +43,7 @@
                     <a href="{% url 'register' %}" class="a-login">Registrarse</a>
                 </div>
                 <div class="google-login">
-                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-google">
+                    <a href="{% provider_login_url 'google' %}" class="btn btn-google">
                         <i class="fab fa-google"></i> <!-- Ícono de Google -->
                     </a>
                 </div>
