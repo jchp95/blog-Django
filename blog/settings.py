@@ -158,6 +158,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Ruta donde se recogerán 
 STATICFILES_DIRS = [
        os.path.join(BASE_DIR, 'chat', 'static'), 
        os.path.join(BASE_DIR, 'cursos', 'static'), 
+       os.path.join(BASE_DIR, 'authentication', 'static'),
 ]
 
 LOGOUT_REDIRECT_URL = 'home'

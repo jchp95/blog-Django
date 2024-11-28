@@ -1,6 +1,7 @@
 asgiref==3.8.1
 beautifulsoup4==4.12.3
 blinker==1.8.2
+cachetools==5.5.0
 certifi==2023.5.7
 cffi==1.17.1
 charset-normalizer==2.0.12
@@ -24,8 +25,14 @@ Flask==3.0.3
 fonttools==4.55.0
 fsspec==2024.10.0
 git-filter-repo==2.45.0
+google-api-core==2.23.0
+google-api-python-client==2.154.0
+google-auth==2.36.0
+google-auth-httplib2==0.2.0
+googleapis-common-protos==1.66.0
 gunicorn==23.0.0
 h11==0.14.0
+httplib2==0.22.0
 huggingface-hub==0.26.2
 idna==3.4
 itsdangerous==2.2.0
@@ -40,6 +47,10 @@ oauthlib==3.2.2
 packaging==24.1
 pandas==2.2.3
 pillow==11.0.0
+proto-plus==1.25.0
+protobuf==5.29.0
+pyasn1==0.6.1
+pyasn1_modules==0.4.1
 pycparser==2.22
 PyJWT==2.9.0
 pyparsing==3.2.0
@@ -53,6 +64,7 @@ rake-nltk==1.0.6
 regex==2024.11.6
 requests==2.27.1
 requests-oauthlib==2.0.0
+rsa==4.9
 setuptools==75.3.0
 six==1.16.0
 social-auth-app-django==5.4.2
@@ -62,6 +74,7 @@ sqlparse==0.4.4
 tqdm==4.66.6
 typing_extensions==4.12.2
 tzdata==2023.3
+uritemplate==4.1.1
 urllib3==1.26.16
 uvicorn==0.32.0
 Werkzeug==3.0.6
