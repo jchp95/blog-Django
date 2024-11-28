@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="container-register-login">
+        <div class="container-card-register-login">
+            <div class="card-body-login">
+                <h2 class="card-title">Iniciar Sesión</h2>
+                
+                {% if messages %}
+                    <ul class="message-list">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+       
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}  <!-- Esto renderiza automáticamente los campos del formulario -->
+                    
+                    <div class="container-buttom">
+                        <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                    </div>
+                </form>
+
+                <div class="forgot-password">
+                    <a href="{% url 'password_reset' %}" class="a-login">¿Olvidaste tu contraseña?</a>
+                    <a href="{% url 'register' %}" class="a-login">Registrarse</a>
+                </div>
+                <div class="social-login">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-google">
+                        <i class="fab fa-google"></i> <!-- Ícono de Google -->
+                    </a>
+                    
+                    <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-twitter">
+                        <i class="fab fa-twitter"></i> <!-- Ícono de Google -->    
+                    </a>
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

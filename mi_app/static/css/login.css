@@ -127,7 +127,7 @@
 }
 
 /* Estilo del botón de Google */
-.google-login {
+.social-login {
     display: flex;
     margin-top: 20px;
     justify-content: center;
@@ -142,6 +142,7 @@
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    margin: 5px;
 }
 
 .btn-google i {
@@ -149,6 +150,29 @@
 }
 
 .fa-google:before {
+    content: "\f1a0";
+    display: flex;
+    margin-left: 6px;
+}
+
+
+.btn-twitter {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4285F4; /* Color de fondo de Google */
+    color: white; /* Color del ícono */
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn-twitter i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.fa-twitter:before {
     content: "\f1a0";
     display: flex;
     margin-left: 6px;
