@@ -1,103 +1,74 @@
-
-/*ESTILOS DEL BUSCADOR*/
-
+/* Estilos generales para el contenedor de búsqueda */
 .search-container {
     display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 5px;
     border-radius: 50px;
-    overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    transition: box-shadow 0.3s ease;
-    padding: 5px; /* Añadir un poco de padding para mejorar el diseño */
-    max-width: 100%; /* Asegúrate de que ocupe el ancho completo en móviles */
-    margin: 0 auto; /* Centrar la barra de búsqueda */
-}
-
-.search-container:focus-within {
-    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
-}
-
-.search-input {
-    border: none;
-    padding: 30px 20px;
-    font-size: 16px;
-    outline: none;
     width: 500px;
-    transition: border 0.3s ease;
-    border-radius: 50px;
+    margin: 0 auto;
 }
 
-.search-input::placeholder {
-    color: #aaa; /* Color del texto del placeholder */
+/* Estilos para el formulario de búsqueda */
+.search-form {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    width: 100%; /* Hacer que el formulario ocupe todo el ancho del contenedor */
 }
 
-.search-input::focus {
-    color: #aaa; /* Color del texto del placeholder */
+/* Estilos para el campo de entrada */
+.search-input {
+    flex: 1; /* Hacer que el campo de entrada ocupe todo el espacio disponible */
+    padding: 12px 20px; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 50px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
 
-.search-icono {
-    background-color: #ffffff00; /* Color de fondo del botón */
+/* Efecto al enfocar el campo de entrada */
+.search-input:focus {
+    border-color: #007BFF; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+    outline: none; /* Eliminar el contorno predeterminado */
+}
+
+/* Estilos para el botón de búsqueda */
+.search-button {
+    background-color: #ffffff; /* Color de fondo azul */
     color: white; /* Color del texto */
-    border: none;
-    padding: 12px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 12px 20px; /* Espaciado interno */
+    margin-left: 10px; /* Espaciado a la izquierda del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
-.search-icono:hover {
-    background-color: #ffffff00; /* Color de fondo al pasar el ratón */
+/* Efecto al pasar el mouse sobre el botón */
+.search-button:hover {
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
 }
 
-.search-icono:active {
-    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
-    background-color: violet;
+/* Efecto al hacer clic en el botón */
+.search-button:active {
+    transform: translateY(0); /* Restablecer la posición al hacer clic */
 }
 
-
-/* Estilos para dispositivos móviles */
+/* Media Queries para Responsividad */
 @media (max-width: 768px) {
     .search-container {
-        flex-direction: column;
-        width: 60%;
-        margin: 0;
-        display: flex;
-        z-index: 1000;
-        position: absolute;
-        margin-right: 10px;
-        max-height: 50px;
         padding: 5px;
-        background-color: #ffffff36;
-        right: 50px;
+        right: 30px;
+        position: relative;
     }
 
     .search-input {
-        border: none;
-        padding: 5px;
-        font-size: 16px;
-        outline: none;
-        width: 200px;
-        transition: border 0.3s ease;
-        margin-right: 35px;
+        padding: 10px; /* Ajustar el espaciado interno en pantallas pequeñas */
+        font-size: 14px; /* Reducir el tamaño de la fuente en pantallas pequeñas */
     }
 
     .search-button {
-        background-color: #ffffff00;
-        position: absolute;
-        right: 8px;
-        border-radius: 50px;
-        width: 30px;
-        padding: 0;
-        top: 8px;
-    }
-
-
-    .search-container:focus-within {
-        box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
-        background-color: #ffffff93;
-    }
-
-    .search-button:hover {
-        background-color: #ffffff00; /* Color de fondo al pasar el ratón */
+        padding: 10px; /* Ajustar el espaciado interno en pantallas pequeñas */
     }
 }

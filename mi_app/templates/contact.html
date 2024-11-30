@@ -30,7 +30,7 @@
         <form id="myForm" method="POST">
             {% csrf_token %}
             {{ form.as_p }} <!-- Esto renderiza el formulario automáticamente -->
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn-primary">Enviar</button>
         </form>
     </div>
 </div>        

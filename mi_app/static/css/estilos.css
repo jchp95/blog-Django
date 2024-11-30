@@ -127,7 +127,7 @@
     margin-bottom: 10px; /* Espacio debajo del título */
 }
 
-.article-content, .news-content {
+p .article-content , .news-content {
     margin-bottom: 10px; /* Espacio debajo del contenido */
 }
 

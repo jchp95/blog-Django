@@ -148,17 +148,3 @@
     outline: none;
 }
 
-.contact-method button {
-    background-color: #ffffff56;
-    color: #333;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.contact-method button:hover {
-    background-color: #007bff6e;
-}

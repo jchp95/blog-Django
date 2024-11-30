@@ -49,7 +49,6 @@
     font-weight: 800;
 }
 
-
 .card-body {
     padding: 0; /* Espaciado interno */
 }
@@ -60,8 +59,9 @@
 }
 
 .form-check {
-    display: flex; /* Flexbox para la alineación */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    align-items: center;
+    margin: 17px 20px;
 }
 
 .form-check-input {

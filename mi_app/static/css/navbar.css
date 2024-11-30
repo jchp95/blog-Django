@@ -78,7 +78,7 @@
         transition: transform 0.3s;
         display: flex;
         justify-content: center;
-        width: 25%;
+        width: 70%;
         height: auto;
         padding: 5px;
         margin-left: 10px;
@@ -86,20 +86,21 @@
 
 
    /* Muestra el menú cuando tiene la clase 'active' */
-.navbar-list.active {
-    display: flex; /* O display: block; dependiendo de tu diseño */
-    flex-direction: column; /* Coloca los enlaces en columna */
-    position: fixed; /* Cambiado a fixed para cubrir toda la pantalla */
-    top: 0; /* Distancia desde la parte superior */
-    right: 0; /* Alineado al borde derecho */
-    z-index: 1001; /* Asegúrate de que esté por encima de otros elementos */
-    width: 100%; /* Ancho completo de la pantalla */
-    height: 100%; /* Altura completa de la pantalla */
-    padding: 20px; /* Espaciado vertical */
-    background-color: #333; /* Fondo del menú en móvil */
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones */
-    max-height: 400px; /* Altura máxima cuando está activo */
-    opacity: 1; /* Totalmente visible */
+   .navbar-list.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0.5)); /* Degradado */
+    backdrop-filter: blur(10px); /* Desenfoque gaussiano */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 400px;
+    opacity: 1;
 }
 
     .navbar-toggle {

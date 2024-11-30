@@ -1,97 +1,163 @@
-.container-slide-section {
-    position: relative;
-    width: 100%;
-    margin-top: 20px;
-    overflow: hidden;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    padding: 20px; /* Agrega un poco de padding alrededor del contenedor */
-}
 
-.slide-section {
-    display: flex;
-    align-items: center;
-    position: relative;
-    height: 300px; /* Aumenta la altura para más espacio */
-}
-
-.slide-container {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
 
 .card-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    transition: transform 0.5s ease-in-out;
+  max-width: 1100px;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+  margin-top: 20px;
 }
 
-.card-slide {
-    position: relative;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra más suave y difusa */
-    border-radius: 10px;
-    overflow: hidden; 
-    box-sizing: border-box; 
-    margin: 0 10px; /* Espaciado entre tarjetas */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suave transición al escalar y cambiar sombra */
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-}
-.card-slide:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al hacer hover */
+
+.card-list .card-item {
+  list-style: none;
 }
 
-.card-image-slide {
-    width: 100%;
-    height: 200px; /* Establece una altura fija para las imágenes */
-    object-fit: cover; /* Recorta la imagen si es necesario */
+.card-list .card-item .card-link {
+  display: block;
+  background: #fff;
+  padding: 18px;
+  user-select: none;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
 }
 
-.card-content-slide {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para mayor contraste */
-    border-radius: 5px; 
-    color: white; /* Color del texto */
-    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
 }
 
-.card-title-slide {
-    margin: 0;
-    font-size: 20px; 
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: bold; /* Cambia el peso de la fuente para destacar el título */
+.card-list .card-item .card-link:hover {
+  border-color: none;
 }
 
-.card-description-slide {
-    margin-top: 5px;
-    font-size: 14px; 
+.card-list .card-link .card-image {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.link-card-slide {
-    font-size: 10px; 
-    margin-top: 5px;
+.card-list .card-link .badge {
+  color: #5372F0;
+  width: fit-content;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  font-weight: 500;
+  background: #DDE4FF;
+  margin: 16px 0 18px;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
-    color: white;
-    border: none;
-    padding: 10px 15px; /* Espaciado interno */
-    cursor: pointer;
-    z-index: 10; 
-    border-radius: 5px; /* Bordes redondeados para los botones */
-    transition: background-color 0.3s; /* Suave transición para el hover */
+.card-list .card-link .badge-designer {
+  color: #B22485;
+  background: #F7DFF5;
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Cambia el color al pasar el ratón */
+.card-list .card-link .badge-marketer {
+  color: #B25A2B;
+  background: #FFE3D2;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.card-list .card-link .badge-gamer {
+  color: #205C20;
+  background: #D6F8D6;
+}
+
+.card-list .card-link .badge-editor {
+  color: #856404;
+  background: #fff3cd;
+}
+
+.card-list .card-link .card-title {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex
+;
+}
+
+.card-list .card-link .card-button {
+  height: 35px;
+  width: 100px;
+  color: #333;
+  margin: 30px 0 5px;
+  background: none;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  transform: rotate(-20deg);
+  transition: 0.4s ease;
+}
+
+.card-list .card-link:hover .card-button {
+  color: #fff;
+  background: #aabc21;
+}
+
+.card-button:hover{
+  transform: rotate(0deg);
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
+  padding: 0;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #aabc215a;
+}
+
+.card-wrapper .swiper-pagination-bullet:hover {
+  background: #aabc21;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button {
+  color: #aabc215a;
+  margin-top: -35px;
+}
+
+.card-wrapper .swiper-slide-button:hover {
+  color: #aabc21;
+  margin-top: -35px;
+}
 
 
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'prev';
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  font-variant: initial;
+  line-height: 1;
+}
 
+/* Responsive media query code for small screens */
+@media (max-width: 768px) {
+  .card-wrapper {
+    margin: 0 10px 25px;
+  }
+
+  .card-wrapper .swiper-slide-button {
+    display: none;
+  }
+}

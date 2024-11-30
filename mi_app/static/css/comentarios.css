@@ -14,6 +14,7 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Sombra al pasar el mouse */
 }
 
+
 .comments-section h2 {
     font-size: 2rem; /* text-3xl */
     font-weight: 700; /* font-bold */
@@ -22,8 +23,9 @@
 }
 
 .comments-section p {
-    color: #555; /* text-gray-700 */
-    margin-bottom: 1rem; /* mb-4 */
+    color: #555;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .comments-section a {

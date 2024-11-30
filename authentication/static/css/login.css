@@ -24,22 +24,32 @@
     text-align: center; /* Centrar el título */
 }
 
+.form-login {
+    display: grid;
+    justify-content: center;
+}
+
+label{
+    margin-right: 20px;
+}
+
 /* Estilos de los grupos de formulario */
-.form-group-login {
+.button, input, optgroup, select, textarea {
     margin-bottom: 20px; /* Espacio inferior entre grupos */
 }
 
 /* Estilos de las etiquetas */
-.form-group-login label {
-    font-weight: 500; /* Peso de fuente más ligero para las etiquetas */
+.button, input, optgroup, select, textarea {
     margin-bottom: 5px; /* Espacio inferior para separar la etiqueta del campo */
     display: block; /* Asegura que las etiquetas ocupen toda la línea */
 }
 
 /* Estilos de los campos de entrada */
-.form-control {
-    width: 100%; /* Ancho completo */
-    padding: 12px; /* Espaciado interno */
+.button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     border: 1px solid #ced4da; /* Borde suave */
     border-radius: 5px; /* Bordes redondeados */
     transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
@@ -47,15 +57,15 @@
 }
 
 /* Estilo del placeholder */
-.form-control::placeholder {
-    color: #a0a0a0; /* Color del placeholder */
+.button, input, optgroup, select, textarea::placeholder {
+    color: #333; /* Color del placeholder */
 }
 
 /* Estilo al enfocar el campo de entrada */
-.form-control:focus {
-    border-color: #007bff; /* Color de borde al enfocar */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
-    outline: none; /* Eliminar el contorno predeterminado */
+.button, input, optgroup, select, textarea {
+    border-color: #cfd0d1;
+    box-shadow: 0 0 5px rgb(188 188 188 / 50%);
+    outline: none;
 }
 
 /* Estilo del mensaje de error */

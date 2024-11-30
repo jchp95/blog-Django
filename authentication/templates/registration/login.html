@@ -16,7 +16,7 @@
                     </ul>
                 {% endif %}
        
-                <form method="POST">
+                <form method="POST" class="form-login">
                     {% csrf_token %}
                     {{ form.as_p }}  <!-- Esto renderiza automáticamente los campos del formulario -->
                     

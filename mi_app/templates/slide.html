@@ -1,47 +1,28 @@
-{% load static %}
-
-<head>
-    <title>Slide venta de articulos electronicos</title>
-    <meta name="description" content="Descubre nuestra galería de imágenes de artículos electrónicos. Explora productos destacados, ofertas especiales y recursos útiles para mejorar tu experiencia de compra. ¡No te lo pierdas!">
-</head>
-
 <body>
-    <!--New Section for SLIDE-->
-    <div class="container-slide-section">
-        <div class="slide-section">
-            <div class="slide-container">
-                <div class="card-wrapper">
-                    {% for image in images %}
-                    <div class="card-slide">
-                        <img src="{{ image.image.url }}" alt="{{ image.title }} - {{ image.description }}" class="card-image-slide">
-                        <div class="card-content-slide">
-                            <h3 class="card-title-slide">{{ image.title }}</h3>
-                            <p class="card-description-slide">{{ image.description }}</p>
-                            <a href="{{ image.link }}" target="_blank" class="link-card-slide">Comprar</a>
-                        </div>
-                    </div>
-                    {% empty %}
-                    <p>No images available..</p>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <!-- Botones de navegación -->
-        <button class="prev">-</button>
-        <button class="next">+</button>
-    </div>
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ImageGallery",
-            "name": "Slide venta de articulos electronicos",
-            "description": "Descubre nuestra galería de imágenes de artículos electrónicos. Explora productos destacados, ofertas especiales y recursos útiles para mejorar tu experiencia de compra. ¡No te lo pierdas!",
-            "image": [
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <!-- Card slides container -->
+            <ul class="card-list swiper-wrapper">
                 {% for image in images %}
-                "{{ image.image.url }}"{% if not forloop.last %},{% endif %}
+                <li class="card-item swiper-slide">
+                    <a href="{{ image.link }}" class="card-link">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }} - {{ image.description }}" class="card-image">
+                        <p class="badge badge-designer">{{ image.title }}</p>
+                        <h2 class="card-title">{{ image.description }}</h2>
+                        <button class="card-button material-symbols-rounded">Comprar</button>
+                    </a>
+                </li>
+                {% empty %}
+                <p>No images available..</p>
                 {% endfor %}
-            ]
-        }
-    </script>
+            </ul>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+    </div>
 </body>
