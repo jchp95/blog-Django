@@ -15,6 +15,9 @@
     {% if banner_home %}
     <div class="banner-gradient">
         <img src="{{ banner_home.image.url }}" alt="Banner Principal" class="banner-home-image">
+        {% if banner_home.text %}
+        <div class="banner-text" id="bannerText">{{ banner_home.text }}</div> <!-- Texto sobre la imagen -->
+        {% endif %}
     </div>
     {% else %}
     <p>No hay imagen disponible.</p>
@@ -96,6 +99,26 @@
             }, 3000);
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const text = "{{ banner_home.text }}"; // Obtén el texto del banner
+    const bannerTextElement = document.getElementById("bannerText");
+    
+    // Asegúrate de que el banner comience vacío
+    bannerTextElement.textContent = ""; // Limpiar el contenido del div
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            bannerTextElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 100); // Ajusta la velocidad de escritura aquí (100ms)
+        }
+    }
+
+    type(); // Inicia el efecto de máquina de escribir
+});
+
 </script>
 
 {% endblock %}

@@ -15,14 +15,13 @@
 
 .card-list .card-item .card-link {
   display: block;
-  background: #fff;
   padding: 18px;
   user-select: none;
-  border-radius: 12px;
   text-decoration: none;
-  border: 2px solid transparent;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 19px 21px rgb(0 0 0 / 7%);
   transition: 0.2s ease;
+  border-radius: 30px;
+  box-shadow: inset 71px 71px -54px #ffffff, inset -16px -16px 32px #3333339e;
 }
 
 .card-list .card-item .card-link:active {

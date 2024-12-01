@@ -34,10 +34,33 @@
     max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     max-height: 1200px; /* Establece una altura máxima para la imagen */
-    
     display: block; /* Asegura que no haya espacios debajo de la imagen */
 }
 
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 69px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 1000;
+    background: linear-gradient(90deg, #5d6232, #61899b); /* Degradado de color */
+    -webkit-background-clip: text; /* Clip del fondo al texto */
+    -webkit-text-fill-color: transparent; /* Relleno del texto transparente */
+    animation: glow 1s infinite alternate; /* Aplicar la animación de brillo */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
 
 
 /*####################################################################################*/
@@ -190,6 +213,13 @@ p .article-content , .news-content {
 
     .article-date, .news-date {
         font-size: 0.8em; /* Tamaño de fuente más pequeño para la fecha */
+    }
+
+    .banner-text {
+        font-size: 19px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
     }
     /* Estilos para el efecto de aparición al hacer scroll */
 .scroll-fade {

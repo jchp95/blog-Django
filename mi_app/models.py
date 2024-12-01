@@ -16,7 +16,8 @@ class Meta:
     fields = ('username', 'email', 'password1', 'password2')
 
 class BannerHome(models.Model):
-    image = models.ImageField(upload_to='banners/')
+    image = models.ImageField(upload_to='banners/', blank=True, null=True)
+    text = models.CharField(max_length=255, blank=True, null=True)  # Campo para el texto
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
