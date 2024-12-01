@@ -97,7 +97,7 @@
     height: 100%;
     padding: 20px;
     background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0.5)); /* Degradado */
-    backdrop-filter: blur(10px); /* Desenfoque gaussiano */
+    backdrop-filter: blur(20px); /* Desenfoque gaussiano */
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     max-height: 400px;
     opacity: 1;

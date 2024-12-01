@@ -21,6 +21,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    
 }
 
 .card-visitas:hover, .card-suscriptores:hover, .card-calificación:hover {
@@ -123,6 +124,7 @@
     background-color: #aabc21; /* Color más oscuro al hacer hover */
 }
 
+
 /* Media Queries para ajustar el tamaño del texto en pantallas más pequeñas */
 @media (max-width: 768px) {
     .card-title-visitas, .card-title-suscriptores, .card-title-calificación {
@@ -131,5 +133,10 @@
 
     .card-text-visitas, .card-text-suscriptores {
         font-size: 8vw; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+    .star {
+        font-size: 20px; /* Tamaño de las estrellas */
+        color: white; /* Color amarillo para las estrellas */
+        cursor: pointer; /* Cambiar cursor al pasar el mouse */
     }
 }

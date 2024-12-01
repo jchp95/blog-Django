@@ -46,11 +46,15 @@
 .social-links {
     display: flex;
     gap: 15px;
+    
 }
+
+
 
 .social-icon img {
     width: 30px;
     height: auto;
+    
 }
 
 .footer-links {
@@ -83,6 +87,7 @@
     margin: 30px;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
+    
 }
 
 .social-icon:hover {

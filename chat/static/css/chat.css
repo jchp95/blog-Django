@@ -1,10 +1,10 @@
 /* Estilo del ícono de chat */
 .chat-icon {
-    background-color: #ffffff27; /* Color de fondo azul */
-    border-radius: 50%;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 150px;
+    background: linear-gradient(145deg, #726868, #61606075);
+    box-shadow: 13px 6px 20px #303030, -5px -5px 11px #dfd6d6;
 }
 
 #chat-icon:hover {
@@ -16,9 +16,7 @@
 .chatOffcanvas {
     display: none; /* Oculto por defecto */
     position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
+    height: 80%;
     width: 300px;
     background-color: #ffffff; /* Fondo blanco */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -26,6 +24,8 @@
     padding: 10px; /* Espaciado interno */
     overflow-y: auto; /* Desplazamiento vertical si es necesario */
     transition: transform 0.3s ease; /* Transición suave */
+    border-radius:  20px ;
+    z-index: 99999;
 }
 
 .container-title-chat {
@@ -132,7 +132,6 @@
     padding: 2px 8px; /* Espaciado interno del botón */
     font-size: 10px; /* Tamaño de fuente del botón */
     transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
-    margin-bottom: 20px; /* Espacio inferior para separar el botón del pie de página */
     color: #333; /* Color del texto */
     transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
 }
@@ -168,11 +167,16 @@
         display: flex;
         justify-content: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        padding: 3px;
-        border-radius: 8px;
+        border-radius: 20px;
         background-color: #ffffff;
         margin-bottom: 10px;
-        width: 85%;
+       
+    }
+
+    #chatOffcanvas {
+        top: 150px;
+        right: 20px;
+      
     }
 
     .h-chat {
