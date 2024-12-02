@@ -4,7 +4,7 @@
     <div class="general-navbar">
         <div class="navbar-logo">
             <a href="{% url 'home' %}">
-                <img src="{% static 'logos/logo.png' %}" alt="Logo" class="logo">
+                <img src="{% static 'logos/log.svg' %}" alt="Logo" class="logo">
             </a>
         </div>
 
@@ -17,11 +17,21 @@
                 <div class="bar"></div>
             </div>
             <ul class="navbar-list" id="navbar-list">
-                <li class="navbar-link"><a href="{% url 'home' %}">Home</a></li>
-                <li class="navbar-link"><a href="{% url 'about' %}">Nosotros</a></li>
-                <li class="navbar-link"><a href="{% url 'services' %}">Servicios</a></li>
-                <li class="navbar-link"><a href="{% url 'contact' %}">Contacto</a></li>
-                <li class="navbar-link"><a href="{% url 'lista_cursos' %}">Cursos</a></li>
+                <li class="navbar-link"><a href="{% url 'home' %}">Home
+                    <i class="bi bi-house"></i> <!-- Ícono de casa -->
+                </a></li>
+                <li class="navbar-link"><a href="{% url 'about' %}">Nosotros
+                    <i class="bi bi-person"></i> <!-- Ícono de usuarios -->
+                </a></li>
+                <li class="navbar-link"><a href="{% url 'services' %}">Servicios
+                    <i class="bi bi-bell"></i> <!-- Ícono de servicio -->
+                </a></li>
+                <li class="navbar-link"><a href="{% url 'contact' %}">Contacto
+                    <i class="bi bi-envelope"></i> <!-- Ícono de sobre -->
+                </a></li>
+                <li class="navbar-link"><a href="{% url 'lista_cursos' %}">Cursos
+                    <i class="bi bi-book"></i> <!-- Ícono de libro abierto -->
+                </a></li>
             </ul>
         </nav>       
     </div>

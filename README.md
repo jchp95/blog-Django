@@ -1,3 +1,1 @@
-
-
-# blog-Django
+RUN APP

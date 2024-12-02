@@ -7,14 +7,14 @@
 }
 
 .navbar-logo .logo {
-    height: 100px; /* Altura del logo */
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Sombra para imágenes SVG */
-    transition: transform 0.3s; /* Transición suave para el efecto hover */
+    height: 42px;
+    transition: transform 0.3s;
+    margin-left: 30px;
 }
 
 .navbar-logo .logo:hover {
     transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el mouse */
-    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.7)); /* Aumenta la sombra al pasar el mouse */
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2)); /* Aumenta la sombra al pasar el mouse */
 }
 
 .navbar {
@@ -84,6 +84,10 @@
         margin-left: 10px;
     }
 
+    .fas .fa-home {
+    font-weight: 900;
+    color: #aabc21;
+}
 
    /* Muestra el menú cuando tiene la clase 'active' */
    .navbar-list.active {
